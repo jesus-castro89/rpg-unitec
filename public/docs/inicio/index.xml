@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Inicio on UNITEC RPG</title>
+    <link>http://localhost:1313/docs/inicio/</link>
+    <description>Recent content in Inicio on UNITEC RPG</description>
+    <generator>Hugo</generator>
+    <language>es-es</language>
+    <lastBuildDate>Mon, 01 Jan 0001 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/docs/inicio/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title></title>
+      <link>http://localhost:1313/docs/inicio/content/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/docs/inicio/content/</guid>
+      <description>Introducción linkUNITEC RPG es un juego de rol hecho en Java con Swing, que busca ser una herramienta para la creación de aventuras de rol en el contexto de la Universidad Tecnológica de México (UNITEC). Este juego es un proyecto de la materia de Programación Orientada a Objetos de la carrera de Ingeniería en Sistemas, así como en la carrera de Diseño de la UNITEC.&#xA;El juego se basa en la mecánica de los juegos de rol por turnos, donde los jugadores pueden crear personajes, explorar un mundo de fantasía y enfrentarse a enemigos en combates por turnos.</description>
+    </item>
+  </channel>
+</rss>

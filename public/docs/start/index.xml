@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>1. Iniciando el proyecto on UNITEC RPG</title>
+    <link>http://localhost:1313/docs/start/</link>
+    <description>Recent content in 1. Iniciando el proyecto on UNITEC RPG</description>
+    <generator>Hugo</generator>
+    <language>es-MX</language>
+    <lastBuildDate>Thu, 09 May 2024 11:58:11 -0600</lastBuildDate>
+    <atom:link href="http://localhost:1313/docs/start/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Creando el proyecto y la primera clase</title>
+      <link>http://localhost:1313/docs/start/start/</link>
+      <pubDate>Thu, 09 May 2024 11:58:11 -0600</pubDate>
+      <guid>http://localhost:1313/docs/start/start/</guid>
+      <description>Para iniciar el proyecto de UNITEC RPG en Java con Swing, necesitas tener instalado un IDE de Java, como Eclipse o IntelliJ IDEA. En este tutorial, vamos a utilizar IntelliJ IDEA para crear el proyecto.&#xA;Paso 1: Crear un nuevo proyecto linkAbre IntelliJ IDEA y selecciona la opción &amp;ldquo;New &amp;gt; Project&amp;rdquo; en la pantalla de bienvenida. Selecciona &amp;ldquo;Java&amp;rdquo; en la lista de opciones y haz clic en &amp;ldquo;Create&amp;rdquo;. En nuestro caso usaremos Java 22.</description>
+    </item>
+  </channel>
+</rss>

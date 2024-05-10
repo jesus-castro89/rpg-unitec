@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Guía De Referencia on UNITEC RPG</title>
+    <link>http://localhost:1313/tags/gu%C3%ADa-de-referencia/</link>
+    <description>Recent content in Guía De Referencia on UNITEC RPG</description>
+    <generator>Hugo</generator>
+    <language>es-es</language>
+    <lastBuildDate>Thu, 09 May 2024 01:54:00 -0600</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/gu%C3%ADa-de-referencia/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>UNITEC RPG</title>
+      <link>http://localhost:1313/docs/</link>
+      <pubDate>Thu, 09 May 2024 01:54:00 -0600</pubDate>
+      <guid>http://localhost:1313/docs/</guid>
+      <description>UNITEC RPG Bienvenido a la guía de referencia para el juego de rol UNITEC RPG. Aquí encontrarás toda la información necesaria para jugar y dirigir partidas de UNITEC RPG.&#xA;Contenido </description>
+    </item>
+  </channel>
+</rss>
