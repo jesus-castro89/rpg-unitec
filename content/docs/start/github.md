@@ -24,3 +24,8 @@ Para crear un repositorio en Github, sigue los siguientes pasos:
    opcional.
 6. Haz clic en el botón `Share` para crear el repositorio en Github.
 7. ¡Listo! Ahora puedes acceder al repositorio en Github y comenzar a trabajar en tu proyecto.
+
+Recuerda que puedes clonar el repositorio en tu máquina local utilizando el comando `git clone` y
+realizar `push` y `pull` para sincronizar los cambios entre tu máquina y el repositorio remoto.
+
+¡Espero que esta guía te haya sido de ayuda! Si tienes alguna pregunta, no dudes en dejar un comentario.

@@ -14,8 +14,56 @@
     <loc>http://localhost:1313/docs/start/start/</loc>
     <lastmod>2024-05-09T11:58:11-06:00</lastmod>
   </url><url>
+    <loc>http://localhost:1313/docs/start/github/</loc>
+    <lastmod>2024-05-10T00:03:10-06:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/docs/characters/</loc>
+    <lastmod>2024-05-09T11:41:22-06:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/docs/characters/basic-character/</loc>
+    <lastmod>2024-05-10T00:11:44-06:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/docs/characters/testing/</loc>
+    <lastmod>2024-05-10T00:25:18-06:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/docs/characters/enemy/</loc>
+    <lastmod>2024-05-10T00:32:41-06:00</lastmod>
+  </url><url>
     <loc>http://localhost:1313/</loc>
-    <lastmod>2024-05-09T11:58:11-06:00</lastmod>
+    <lastmod>2024-05-10T00:32:41-06:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/crear/</loc>
+    <lastmod>2024-05-10T00:11:44-06:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/dise%C3%B1ar/</loc>
+    <lastmod>2024-05-10T00:11:44-06:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/jugador/</loc>
+    <lastmod>2024-05-10T00:11:44-06:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/personaje/</loc>
+    <lastmod>2024-05-10T00:11:44-06:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/personajes/</loc>
+    <lastmod>2024-05-10T00:11:44-06:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/principal/</loc>
+    <lastmod>2024-05-10T00:11:44-06:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/secundarios/</loc>
+    <lastmod>2024-05-10T00:11:44-06:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/</loc>
+    <lastmod>2024-05-10T00:11:44-06:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/git/</loc>
+    <lastmod>2024-05-10T00:03:10-06:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/github/</loc>
+    <lastmod>2024-05-10T00:03:10-06:00</lastmod>
+  </url><url>
+    <loc>http://localhost:1313/tags/repositorio/</loc>
+    <lastmod>2024-05-10T00:03:10-06:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/configuraci%C3%B3n/</loc>
     <lastmod>2024-05-09T11:41:22-06:00</lastmod>
@@ -33,9 +81,6 @@
     <lastmod>2024-05-09T11:41:22-06:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/swing/</loc>
-    <lastmod>2024-05-09T11:41:22-06:00</lastmod>
-  </url><url>
-    <loc>http://localhost:1313/tags/</loc>
     <lastmod>2024-05-09T11:41:22-06:00</lastmod>
   </url><url>
     <loc>http://localhost:1313/tags/unitec/</loc>

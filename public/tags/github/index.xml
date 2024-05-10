@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Github on UNITEC RPG</title>
+    <link>http://localhost:1313/tags/github/</link>
+    <description>Recent content in Github on UNITEC RPG</description>
+    <generator>Hugo</generator>
+    <language>es-MX</language>
+    <lastBuildDate>Fri, 10 May 2024 00:03:10 -0600</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/github/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Github</title>
+      <link>http://localhost:1313/docs/start/github/</link>
+      <pubDate>Fri, 10 May 2024 00:03:10 -0600</pubDate>
+      <guid>http://localhost:1313/docs/start/github/</guid>
+      <description>Creación de un repositorio en Github linkPara crear un repositorio en Github, sigue los siguientes pasos:&#xA;Ingresa a Github. Inicia sesión con tu cuenta de Github. Si no tienes una cuenta, puedes crear una aquí. Una vez que hayas iniciado sesión, abre IntelliJ IDEA y dirígete a la pestaña VCS en la barra de herramientas. Selecciona la opción Import into Version Control y haz clic en Share Project on Github. En la ventana emergente, ingresa el nombre del repositorio y una descripción opcional.</description>
+    </item>
+  </channel>
+</rss>
