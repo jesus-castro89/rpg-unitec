@@ -1,106 +1,69 @@
 package unitec.rpg.entities;
 
+import unitec.rpg.util.StatsMap;
+
+import java.util.HashMap;
+import java.util.Map;
+
 /**
  * Clase que representa un personaje básico en un juego de rol. Contiene los atributos básicos de un personaje
  * como nombre, nivel, experiencia, puntos de vida, puntos de maná, fuerza, destreza, inteligencia, sabiduría,
  * carisma, constitución, velocidad, defensa, resistencia y suerte.
  */
-public class BasicCharacter {
+public abstract class BasicCharacter {
 
     /**
      * Nombre del personaje.
      */
-    private String name;
-    /**
-     * Nivel del personaje.
-     */
-    private int level;
-    /**
-     * Experiencia del personaje.
-     */
-    private int experience;
-    /**
-     * Oro del personaje.
-     */
-    private int gold;
+    protected String name;
     /**
      * Puntos de vida del personaje.
      */
-    private int hp;
+    protected int hp;
     /**
      * Puntos de vida máximos del personaje.
      */
-    private int maxHP;
+    protected int maxHP;
     /**
      * Puntos de magia del personaje.
      */
-    private int mp;
+    protected int mp;
     /**
      * Puntos de magia máximos del personaje.
      */
-    private int maxMP;
+    protected int maxMP;
     /**
-     * Fuerza del personaje.
+     * Estadísticas del personaje.
      */
-    private int strength;
-    /**
-     * Defensa del personaje.
-     */
-    private int defense;
-    /**
-     * Destreza del personaje.
-     */
-    private int dexterity;
-    /**
-     * Inteligencia del personaje.
-     */
-    private int intelligence;
-    /**
-     * Sabiduría del personaje.
-     */
-    private int wisdom;
-    /**
-     * Carisma del personaje.
-     */
-    private int charisma;
-    /**
-     * Constitución del personaje.
-     */
-    private int constitution;
-    /**
-     * Velocidad del personaje.
-     */
-    private int speed;
-    /**
-     * Resistencia del personaje.
-     */
-    private int resistance;
-    /**
-     * Suerte del personaje.
-     */
-    private int luck;
+    protected StatsMap stats;
 
+    /**
+     * Constructor de la clase.
+     *
+     * @param name         Nombre del personaje.
+     * @param strength     Fuerza del personaje.
+     * @param dexterity    Destreza del personaje.
+     * @param intelligence Inteligencia del personaje.
+     * @param wisdom       Sabiduría del personaje.
+     * @param charisma     Carisma del personaje.
+     * @param constitution Constitución del personaje.
+     * @param speed        Velocidad del personaje.
+     * @param defense      Defensa del personaje.
+     * @param resistance   Resistencia del personaje.
+     * @param luck         Suerte del personaje.
+     */
     public BasicCharacter(String name, int strength, int dexterity, int intelligence, int wisdom, int charisma,
                           int constitution, int speed, int defense, int resistance, int luck) {
 
+        // Inicializar los atributos del personaje.
         this.name = name;
-        this.level = 1;
-        this.experience = 0;
-        this.gold = 0;
         this.hp = 50;
         this.maxHP = 50;
         this.mp = 20;
         this.maxMP = 20;
-        this.strength = strength;
-        this.dexterity = dexterity;
-        this.intelligence = intelligence;
-        this.wisdom = wisdom;
-        this.charisma = charisma;
-        this.constitution = constitution;
-        this.speed = speed;
-        this.defense = defense;
-        this.resistance = resistance;
-        this.luck = luck;
+        // Inicializar las estadísticas del personaje.
+        this.stats = new StatsMap(strength, dexterity, intelligence, wisdom, charisma, constitution, speed, defense,
+                resistance, luck);
     }
 
     public BasicCharacter() {
@@ -111,17 +74,14 @@ public class BasicCharacter {
 
         this.hp -= damage;
         System.out.println(this.name + " recibe " + damage + " puntos de daño.");
+        isDead();
+    }
+
+    private void isDead() {
+
         if (this.hp <= 0) {
             System.out.println(this.name + " ha sido derrotado.");
         }
-    }
-
-    public int getGold() {
-        return gold;
-    }
-
-    public void setGold(int gold) {
-        this.gold = gold;
     }
 
     public String getName() {
@@ -130,22 +90,6 @@ public class BasicCharacter {
 
     public void setName(String name) {
         this.name = name;
-    }
-
-    public int getLevel() {
-        return level;
-    }
-
-    public void setLevel(int level) {
-        this.level = level;
-    }
-
-    public int getExperience() {
-        return experience;
-    }
-
-    public void setExperience(int experience) {
-        this.experience = experience;
     }
 
     public int getHP() {
@@ -180,83 +124,11 @@ public class BasicCharacter {
         this.maxMP = maxMP;
     }
 
-    public int getStrength() {
-        return strength;
+    public StatsMap getStats() {
+        return stats;
     }
 
-    public void setStrength(int strength) {
-        this.strength = strength;
-    }
-
-    public int getDexterity() {
-        return dexterity;
-    }
-
-    public void setDexterity(int dexterity) {
-        this.dexterity = dexterity;
-    }
-
-    public int getIntelligence() {
-        return intelligence;
-    }
-
-    public void setIntelligence(int intelligence) {
-        this.intelligence = intelligence;
-    }
-
-    public int getWisdom() {
-        return wisdom;
-    }
-
-    public void setWisdom(int wisdom) {
-        this.wisdom = wisdom;
-    }
-
-    public int getCharisma() {
-        return charisma;
-    }
-
-    public void setCharisma(int charisma) {
-        this.charisma = charisma;
-    }
-
-    public int getConstitution() {
-        return constitution;
-    }
-
-    public void setConstitution(int constitution) {
-        this.constitution = constitution;
-    }
-
-    public int getSpeed() {
-        return speed;
-    }
-
-    public void setSpeed(int speed) {
-        this.speed = speed;
-    }
-
-    public int getDefense() {
-        return defense;
-    }
-
-    public void setDefense(int defense) {
-        this.defense = defense;
-    }
-
-    public int getResistance() {
-        return resistance;
-    }
-
-    public void setResistance(int resistance) {
-        this.resistance = resistance;
-    }
-
-    public int getLuck() {
-        return luck;
-    }
-
-    public void setLuck(int luck) {
-        this.luck = luck;
+    public void setStats(StatsMap stats) {
+        this.stats = stats;
     }
 }
