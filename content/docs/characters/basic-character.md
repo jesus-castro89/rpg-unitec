@@ -15,22 +15,17 @@ tags: [ "personaje", "personajes", "jugador", "principal", "secundarios", "crear
 Para crear un personaje básico, necesitamos definir los siguientes atributos:
 
 - Nombre del personaje (Name): El nombre del personaje.
-- Nivel (Level): El nivel del personaje.
-- Experiencia (Experience): La experiencia del personaje.
-- Oro (Gold): La cantidad de oro del personaje.
 - Salud (HP) y Salud Máxima (MaxHP): La salud y la salud máxima del personaje.
 - Magía (MP) y Magía Máxima (MaxMP): La magía y la magía máxima del personaje.
-- Fuerza (Strength): La fuerza del personaje.
-- Destreza (Dexterity): La destreza del personaje.
-- Inteligencia (Intelligence): La inteligencia del personaje.
-- Sabiduría (Wisdom): La sabiduría del personaje.
-- Carisma (Charisma): El carisma del personaje.
-- Constitución (Constitution): La constitución del personaje.
-- Velocidad (Speed): La velocidad del personaje.
-- Defensa (Defense): La defensa del personaje.
-- Resistencia (Resistance): La resistencia del personaje.
-- Suerte (Luck): La suerte del personaje.
-- Otros atributos: Pueden incluirse otros atributos como oro, habilidades, hechizos, etc.
+
+Así mismo, la clase contará con los siguientes métodos:
+
+- `getters` y `setters`: Para acceder y modificar los atributos de la clase.
+- `takeDamage`: Para recibir daño.
+- `isAlive`: Para verificar si el personaje sigue con vida.
+
+Estos atributos son comunes a todos los personajes del juego y se pueden extender en subclases para agregar más
+características específicas de cada personaje.
 
 Por ahora, usaremos los atributos mencionados anteriormente, sin embargo, eventualmente agregaremos más atributos a
 medida que avancemos en el desarrollo del juego.
@@ -45,46 +40,83 @@ paquete `unitec.rpg.entities` y agregar el siguiente código:
     package unitec.rpg.entities;
     
     public class BasicCharacter {
-
-        private String name;
-        private int level;
-        private int experience;
-        private int hp;
-        private int maxHP;
-        private int mp;
-        private int maxMP;
-        private int strength;
-        private int dexterity;
-        private int intelligence;
-        private int wisdom;
-        private int charisma;
-        private int constitution;
-        private int speed;
-        private int defense;
-        private int resistance;
-        private int luck;
     
-        public BasicCharacter(String name, int strength, int dexterity, int intelligence, int wisdom, int charisma,
-                          int constitution, int speed, int defense, int resistance, int luck) {
+        protected String name;
+        protected int hp;
+        protected int maxHP;
+        protected int mp;
+        protected int maxMP;
+    
+        public BasicCharacter(String name) {
             this.name = name;
-            this.level = 1;
-            this.experience = 0;
             this.hp = 50;
             this.maxHP = 50;
             this.mp = 20;
             this.maxMP = 20;
-            this.strength = strength;
-            this.dexterity = dexterity;
-            this.intelligence = intelligence;
-            this.wisdom = wisdom;
-            this.charisma = charisma;
-            this.constitution = constitution;
-            this.speed = speed;
-            this.defense = defense;
-            this.resistance = resistance;
-            this.luck = luck;
         }
     
+        public BasicCharacter() {
+            this("John Doe");
+        }
+    
+        public void takeDamage(int damage) {
+            this.hp -= damage;
+            if (this.hp < 0) {
+                this.hp = 0;
+            }
+        }
+    
+        public boolean isAlive() {
+            return this.hp > 0;
+        }
+    
+        public void defend(int damage) {
+            this.hp -= damage;
+            if (this.hp < 0) {
+                this.hp = 0;
+            }
+        }
+    
+        public String getName() {
+            return name;
+        }
+    
+        public void setName(String name) {
+            this.name = name;
+        }
+    
+        public int getHP() {
+            return hp;
+        }
+    
+        public void setHP(int hp) {
+            this.hp = hp;
+        }
+    
+        public int getMaxHP() {
+            return maxHP;
+        }
+    
+        public void setMaxHP(int maxHP) {
+            this.maxHP = maxHP;
+        }
+    
+        public int getMP() {
+            return mp;
+        }
+    
+        public void setMP(int mp) {
+            this.mp = mp;
+        }
+    
+        public int getMaxMP() {
+            return maxMP;
+        }
+    
+        public void setMaxMP(int maxMP) {
+            this.maxMP = maxMP;
+        }
+
         // Getters and Setters
     }
 
@@ -96,7 +128,43 @@ que inicializa los valores de los atributos.
 Ahora deberás implementar los métodos `getters` y `setters` para acceder y modificar los atributos de la clase
 `BasicCharacter`.
 
+### Implementando los métodos `getters` y `setters`
+
+Para implementar los métodos get y set de cada atributo, puedes emplear la funcionalidad de autogeneración de código
+de tu IDE o escribirlos manualmente. A continuación, se muestra un ejemplo de cómo implementar los métodos `getters` y
+`setters` para el atributo `name`:
+
+{{< prism lang="java" line-numbers="true">}}
+
+    public String getName() {
+        return name;
+    }
+    
+    public void setName(String name) {
+        this.name = name;
+    }
+
+{{< /prism >}}
+
+{{% alert context="primary" %}}
+En IntelliJ puedes invocar la autogeneración mediante las teclas `Ctrl` + `Insert` y seleccionar la
+opción `Getter and Setter`.
+{{< figure src="/images/start/img_5.png" alt="Menu Generate"  >}}
+Posteriormente seleccionar todos los atributos de la clase y por último dar clic al botón `OK`.
+{{< figure src="/images/start/img_6.png" alt="Selección de Atributos"  >}}
+Este proceso puedes realizarlo en todas las clases del proyecto en las que necesites los métodos `getters` y `setters`.
+{{% /alert %}}
+
 Así mismo deberás crear un nuevo constructor sin parámetros para inicializar los atributos con valores predeterminados.
+
+{{% alert context="primary" %}}
+En IntelliJ puedes invocar la autogeneración mediante las teclas `Ctrl` + `Insert` y seleccionar la
+opción `Constructor`.
+{{< figure src="/images/start/img_5.png" alt="Menu Generate"  >}}
+Posteriormente seleccionar todos los atributos de la clase y por último dar clic al botón `OK`.
+{{< figure src="/images/start/img_7.png" alt="Selección de Atributos"  >}}
+Este proceso puedes realizarlo en todas las clases del proyecto en las que necesites un constructor sin parámetros.
+{{% /alert %}}
 
 En el siguiente tutorial, aprenderás a probar la clase `BasicCharacter` y a crear instancias de personajes básicos.
 

@@ -1,5 +1,5 @@
 ---
-weight: 304
+weight: 303
 title: "El Jugador"
 description: "Creando al jugador principal."
 icon: "swords"
@@ -15,23 +15,17 @@ Para crear al jugador principal, necesitamos hacer lo siguiente:
 
 - Heredar de la clase `BasicCharacter`: El jugador principal será una subclase de la clase `BasicCharacter` con algunos
   atributos y métodos adicionales.
-- Definir los atributos específicos del jugador: Además de los atributos heredados de `BasicCharacter`, el jugador
-  principal tendrá atributos específicos como `experience` (experiencia), `gold` (oro), `inventory` (inventario), etc.
-- Implementar métodos específicos del jugador: El jugador principal tendrá métodos específicos como `levelUp` (subir de
-  nivel), `gainExperience` (ganar experiencia), `earnGold` (ganar oro), `addItemToInventory` (añadir objeto al
-  inventario),
-  etc.
-- Crear una clase de prueba para el jugador: Necesitamos crear una clase de prueba para el jugador principal para probar
-  sus métodos y atributos.
-- Agregar más jugadores: Eventualmente, agregaremos más jugadores al juego con diferentes atributos y habilidades.
-- Crear una interfaz gráfica para el jugador: En el futuro, crearemos una interfaz gráfica para mostrar al jugador
-  principal en la pantalla.
-- Implementar la lógica del juego: Implementaremos la lógica del juego para que el jugador pueda interactuar con el
-  mundo del juego.
-- Mejorar la inteligencia artificial del jugador: Implementaremos una inteligencia artificial básica para que el jugador
-  pueda tomar decisiones durante el juego.
-- Añadir sonidos y efectos visuales: Añadiremos sonidos y efectos visuales para mejorar la experiencia del jugador
-  durante el juego.
+- Definir los atributos del jugador principal: El jugador principal tendrá los siguientes atributos:
+    - `attack`: El ataque del jugador.
+    - `defense`: La defensa del jugador.
+    - `experience`: La experiencia del jugador.
+    - `level`: El nivel del jugador.
+    - `gold`: El oro del jugador.
+- Implementar los métodos `getters` y `setters` para acceder y modificar los atributos de la clase `Player`.
+- Implementar el método `levelUp` para subir de nivel al jugador.
+- Implementar el método `gainExperience` para ganar experiencia.
+- Implementar el método `attack` para atacar a un enemigo.
+- Implementar el método `defend` para defenderse de un ataque enemigo.
 
 ### Definiendo la clase `Player`
 
@@ -39,98 +33,78 @@ Para definir la clase `Player`, necesitamos crear un nuevo archivo llamado `Play
 paquete `unitec.rpg.entities`
 y agregar el siguiente código:
 
-{{< prism lang="java line-numbers="true">}}
+{{< prism lang="java" line-numbers="true">}}
 
     package unitec.rpg.entities;
 
-    import java.util.ArrayList;
-    import java.util.List;
-
     public class Player extends BasicCharacter {
 
+        private int attack;
+        private int defense;
         private int experience;
+        private int level;
         private int gold;
-        private List<Item> inventory;
-
-        public Player() {
-            super();
+    
+        public Player(String name) {
+            super(name);
+            this.attack = 10;
+            this.defense = 5;
             this.experience = 0;
-            this.gold = 0;
-            this.inventory = new ArrayList<>();
+            this.level = 1;
         }
-
-        public void levelUp() {
-            setLevel(getLevel() + 1);
-            setMaxHP(getMaxHP() + 10);
-            setMaxMP(getMaxMP() + 5);
-            setStrength(getStrength() + 1);
-            setDexterity(getDexterity() + 1);
-            setIntelligence(getIntelligence() + 1);
-            setWisdom(getWisdom() + 1);
-            setCharisma(getCharisma() + 1);
-            setHP(getMaxHP());
-            setMP(getMaxMP());
+    
+        public Player() {
+            this("John Doe");
         }
-
-        public void gainExperience(int amount) {
-            experience += amount;
-            if (experience >= 100) {
-                levelUp();
-                experience -= 100;
+    
+        public void attack(Enemy enemy) {
+            int damage = this.attack - enemy.getDefense();
+            if (damage > 0) {
+                System.out.println(this.getName() + " ataca a " + enemy.getName() + " y le hace " + damage + " puntos de daño.");
+                enemy.takeDamage(damage);
+            } else {
+                System.out.println(this.getName() + " ataca a " + enemy.getName() + " pero no le hace daño.");
             }
         }
-
-        public void earnGold(int amount) {
-            gold += amount;
+    
+        public void defend(Enemy enemy) {
+            int damage = enemy.getAttack() - this.defense;
+            this.takeDamage(damage);
+        }
+    
+        public void levelUp() {
+            this.level++;
+            this.maxHP += 10;
+            this.hp = this.maxHP;
+            this.maxMP += 5;
+            this.mp = this.maxMP;
+            this.attack += 2;
+            this.defense += 1;
+        }
+    
+        public void gainExperience(int exp) {
+            this.experience += exp;
+            if (this.experience >= 100 * this.level) {
+                levelUp();
+            }
+        }
+    
+        public void gainGold(int gold) {
+            this.gold += gold;
         }
 
-        public void addItemToInventory(Item item) {
-            inventory.add(item);
-        }
-
-        // Getters and setters
+        // Getters and Setters
     }
 
 {{< /prism >}}
 
-En este código, hemos definido la clase `Player` que hereda de la clase `BasicCharacter` y agrega atributos y métodos
-específicos del jugador. El jugador principal tiene atributos como `experience` (experiencia), `gold` (oro) e
-`inventory` (inventario) que le permiten interactuar con el mundo del juego. También hemos implementado métodos como
-`levelUp` (subir de nivel), `gainExperience` (ganar experiencia), `earnGold` (ganar oro) y `addItemToInventory` (añadir
-objeto al inventario) para permitir al jugador mejorar sus habilidades, ganar experiencia, ganar oro y recoger objetos
-durante el juego.
+En este código, hemos definido la clase `Player` con los atributos mencionados anteriormente y un constructor
+que inicializa los valores de los atributos.
 
-### Creando al jugador principal
+Ahora deberás implementar los métodos `getters` y `setters` para acceder y modificar los atributos de la clase
+`Player`.
 
-Para crear al jugador principal, necesitamos instanciar la clase `Player` y configurar sus atributos. Por ejemplo, para
-crear un nuevo jugador llamado "Hero" con una fuerza de 10, una destreza de 10, una inteligencia de 10, una sabiduría de
-10, un carisma de 10, una constitución de 10, una velocidad de 10, una defensa de 10, una resistencia de 10, una suerte
-de 10, 0 puntos de experiencia, 0 monedas de oro y un inventario vacío, podemos hacer lo siguiente:
-
-{{< prism lang="java line-numbers="true">}}
-
-    // Crear un nuevo jugador principal
-    Player hero = new Player();
-    hero.setName("Hero");
-    hero.setStrength(10);
-    hero.setDexterity(10);
-    hero.setIntelligence(10);
-    hero.setWisdom(10);
-    hero.setCharisma(10);
-    hero.setConstitution(10);
-    hero.setSpeed(10);
-    hero.setDefense(10);
-    hero.setResistance(10);
-    hero.setLuck(10);
-    hero.setExperience(0);
-    hero.setGold(0);
-    hero.setInventory(new ArrayList<>());
-
-{{< /prism >}}
-
-En este ejemplo, hemos creado un nuevo jugador principal llamado `hero` con el nombre "Hero" y los atributos mencionados
-anteriormente. Este jugador puede ser controlado por el jugador durante el juego y puede interactuar con el mundo del
-juego a través de sus atributos y métodos.
-
-¡Ahora que hemos creado al jugador principal, podemos comenzar a diseñar el mundo del juego y las mecánicas de juego
-para proporcionar una experiencia de juego inmersiva y emocionante para los jugadores!
+{{% alert context="danger" %}}
+Si notas que el sistema marca como error la clase `Enemy`, es porque aún no la hemos definido. Puedes
+seguir adelante con la definición de la clase `Player` y luego definir la clase `Enemy`.
+{{% /alert %}}

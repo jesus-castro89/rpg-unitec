@@ -1,87 +1,52 @@
 package unitec.rpg.entities;
 
-import unitec.rpg.util.StatsMap;
+public class BasicCharacter {
 
-import java.util.HashMap;
-import java.util.Map;
-
-/**
- * Clase que representa un personaje básico en un juego de rol. Contiene los atributos básicos de un personaje
- * como nombre, nivel, experiencia, puntos de vida, puntos de maná, fuerza, destreza, inteligencia, sabiduría,
- * carisma, constitución, velocidad, defensa, resistencia y suerte.
- */
-public abstract class BasicCharacter {
-
-    /**
-     * Nombre del personaje.
-     */
     protected String name;
-    /**
-     * Puntos de vida del personaje.
-     */
     protected int hp;
-    /**
-     * Puntos de vida máximos del personaje.
-     */
     protected int maxHP;
-    /**
-     * Puntos de magia del personaje.
-     */
     protected int mp;
-    /**
-     * Puntos de magia máximos del personaje.
-     */
     protected int maxMP;
-    /**
-     * Estadísticas del personaje.
-     */
-    protected StatsMap stats;
 
-    /**
-     * Constructor de la clase.
-     *
-     * @param name         Nombre del personaje.
-     * @param strength     Fuerza del personaje.
-     * @param dexterity    Destreza del personaje.
-     * @param intelligence Inteligencia del personaje.
-     * @param wisdom       Sabiduría del personaje.
-     * @param charisma     Carisma del personaje.
-     * @param constitution Constitución del personaje.
-     * @param speed        Velocidad del personaje.
-     * @param defense      Defensa del personaje.
-     * @param resistance   Resistencia del personaje.
-     * @param luck         Suerte del personaje.
-     */
-    public BasicCharacter(String name, int strength, int dexterity, int intelligence, int wisdom, int charisma,
-                          int constitution, int speed, int defense, int resistance, int luck) {
-
-        // Inicializar los atributos del personaje.
+    public BasicCharacter(String name) {
         this.name = name;
         this.hp = 50;
         this.maxHP = 50;
         this.mp = 20;
         this.maxMP = 20;
-        // Inicializar las estadísticas del personaje.
-        this.stats = new StatsMap(strength, dexterity, intelligence, wisdom, charisma, constitution, speed, defense,
-                resistance, luck);
     }
 
     public BasicCharacter() {
-        this("", 10, 10, 10, 10, 10, 10, 10, 10, 10, 10);
+        this("John Doe");
     }
 
     public void takeDamage(int damage) {
-
         this.hp -= damage;
-        System.out.println(this.name + " recibe " + damage + " puntos de daño.");
-        isDead();
+        if (this.hp < 0) {
+            this.hp = 0;
+        }
     }
 
-    private void isDead() {
+    public boolean isAlive() {
+        return this.hp > 0;
+    }
 
-        if (this.hp <= 0) {
-            System.out.println(this.name + " ha sido derrotado.");
+    public void defend(int damage) {
+        this.hp -= damage;
+        if (this.hp < 0) {
+            this.hp = 0;
         }
+    }
+
+    @Override
+    public String toString() {
+        return "BasicCharacter{" +
+                "name='" + name + '\'' +
+                ", hp=" + hp +
+                ", maxHP=" + maxHP +
+                ", mp=" + mp +
+                ", maxMP=" + maxMP +
+                '}';
     }
 
     public String getName() {
@@ -122,13 +87,5 @@ public abstract class BasicCharacter {
 
     public void setMaxMP(int maxMP) {
         this.maxMP = maxMP;
-    }
-
-    public StatsMap getStats() {
-        return stats;
-    }
-
-    public void setStats(StatsMap stats) {
-        this.stats = stats;
     }
 }

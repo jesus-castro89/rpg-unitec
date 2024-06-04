@@ -1,4 +1,4 @@
-baseURL = 'https://example.org/'
+baseURL = 'https://jesus-castro89.github.io/rpg-unitec/'
 languageCode = 'es-MX'
 title = 'UNITEC RPG'
 
@@ -10,12 +10,16 @@ disable = false
 path = "github.com/gohugoio/hugo-mod-bootstrap-scss/v5"
 disable = false
 
+[markup.goldmark.renderer]
+unsafe = true
+
 [params]
-google_fonts = [["Saira", "400,700"], ["Rosario", "400,700"], ["Fira Code", "400,700"]]
-sans_serif_font = "Saira"
-secondary_font = "Rosario"
+google_fonts = [["Noto Sans", "400,700"], ["Rosario", "400,700"], ["Fira Code", "400,700"]]
+sans_serif_font = "Rosario"
+secondary_font = "Noto Sans"
 mono_font = "Fira Code"
-custom_css = ["css/custom.css"]
+custom_css = ["/rpg-unitec/css/custom.css"]
+logo = "/rpg-unitec/images/logo.jpg"
 
 [params.footer]
 copyright = "M. en E. Jesús Aurelio Castro Magaña"
@@ -27,3 +31,9 @@ darkMode = true
 sidebarIcons = true
 titleIcon = true
 prism = true
+
+[[menu.primary]]
+name = "Docs"
+url = "/docs/"
+identifier = "docs"
+weight = 10

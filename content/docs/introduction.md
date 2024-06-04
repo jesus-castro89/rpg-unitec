@@ -10,7 +10,9 @@ toc: true
 tags: [ "unitec", "rpg", "java", "swing" ]
 ---
 
-## Introducción
+<figure style="text-align: center">
+  <img src="/images/brand.jpg" alt="UNITEC RPG" class="img-fluid" width="800">
+</figure>
 
 UNITEC RPG es un juego de rol hecho en Java con Swing, que busca ser una herramienta para la creación de aventuras de
 rol en el contexto de la Universidad Tecnológica de México (UNITEC). Este juego es un proyecto de la materia de
@@ -50,6 +52,6 @@ estudiantes.
 
 ## Requisitos
 
-Para poder jugar UNITEC RPG, necesitas tener instalado Java en tu computadora. Puedes descargar Java desde el siguiente
-enlace: [Descargar Java](https://www.java.com/es/download/). Además, necesitas tener instalado un IDE de Java, como
-Eclipse o IntelliJ IDEA, para poder abrir y ejecutar el proyecto.
+Para poder jugar UNITEC RPG, necesitas tener instalado Java en tu computadora. Puedes descargar el JDK de Java desde el
+siguiente enlace: [Descargar Java](https://www.java.com/es/download/). Además, necesitas tener instalado un IDE de Java,
+como Eclipse o IntelliJ IDEA, para poder abrir y ejecutar el proyecto. Sin embargo, recomendamos usar IntelliJ IDEA.

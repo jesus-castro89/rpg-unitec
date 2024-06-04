@@ -17,42 +17,33 @@ paquete `unitec.rpg.test` y agregar el siguiente código:
 {{< prism lang="java" line-numbers="true">}}
 
     package unitec.rpg.test;
-    
+
     import unitec.rpg.entities.BasicCharacter;
-    
+
     public class BasicCharacterTest {
-    
+
         public static void main(String[] args) {
-    
+
             // Crear un nuevo personaje básico
-            BasicCharacter character = new BasicCharacter();
-    
-            // Establecer los atributos del personaje
-            character.setName("Aragorn");
-            character.setLevel(1);
-            character.setExperience(0);
-            character.setHp(100);
-            character.setMaxHp(100);
-            character.setMP(50);
-            character.setMaxMP(50);
-            character.setStrength(10);
-            character.setDexterity(10);
-            character.setIntelligence(10);
-            character.setWisdom(10);
-            character.setCharisma(10);
-    
-            // Mostrar los atributos del personaje
+            BasicCharacter character = new BasicCharacter("Alice");
+
+            // Imprimir los atributos del personaje
             System.out.println("Nombre: " + character.getName());
-            System.out.println("Nivel: " + character.getLevel());
-            System.out.println("Experiencia: " + character.getExperience());
             System.out.println("Salud: " + character.getHP() + "/" + character.getMaxHP());
             System.out.println("Magía: " + character.getMP() + "/" + character.getMaxMP());
-            System.out.println("Fuerza: " + character.getStrength());
-            System.out.println("Destreza: " + character.getDexterity());
-            System.out.println("Inteligencia: " + character.getIntelligence());
-            System.out.println("Sabiduría: " + character.getWisdom());
-            System.out.println("Carisma: " + character.getCharisma());
         }
     }
 
 {{< /prism >}}
+
+En este código, hemos creado una clase de prueba `BasicCharacterTest` que crea un nuevo personaje básico con el nombre
+"Alice" y muestra los atributos del personaje en la consola.
+
+Para ejecutar la clase de prueba, haz clic derecho en la clase `BasicCharacterTest` y selecciona "Run
+`BasicCharacterTest.main()`". Verás la salida con los atributos del personaje en la consola de IntelliJ IDEA.
+
+Con esto, hemos probado con éxito la clase `BasicCharacter` y hemos verificado que los atributos del personaje se
+inicializan correctamente. En los próximos tutoriales, agregaremos más funcionalidades a la clase `BasicCharacter` y
+crearemos otros personajes para nuestro juego.
+
+¡Felicitaciones por completar esta lección! 🎉

@@ -2,49 +2,74 @@ package unitec.rpg.entities;
 
 public class Player extends BasicCharacter {
 
-    /**
-     * Nivel del personaje.
-     */
-    private int level;
-    /**
-     * Experiencia del personaje.
-     */
+    private int attack;
+    private int defense;
     private int experience;
-    /**
-     * Oro del personaje.
-     */
+    private int level;
     private int gold;
 
-    /**
-     * Constructor del Personaje que recibe todos los atributos e inicializa el nivel, la experiencia y el oro.
-     *
-     * @param name         Nombre del personaje.
-     * @param strength     Fuerza del personaje.
-     * @param dexterity    Destreza del personaje.
-     * @param intelligence Inteligencia del personaje.
-     * @param wisdom       Sabiduría del personaje.
-     * @param charisma     Carisma del personaje.
-     * @param constitution Constitución del personaje.
-     * @param speed        Velocidad del personaje.
-     * @param defense      Defensa del personaje.
-     * @param resistance   Resistencia del personaje.
-     * @param luck         Suerte del personaje.
-     */
-    public Player(String name, int strength, int dexterity, int intelligence, int wisdom, int charisma,
-                  int constitution, int speed, int defense, int resistance, int luck) {
-
-        super(name, strength, dexterity, intelligence, wisdom, charisma, constitution, speed, defense, resistance, luck);
-        this.level = 1;
+    public Player(String name) {
+        super(name);
+        this.attack = 10;
+        this.defense = 5;
         this.experience = 0;
-        this.gold = 0;
+        this.level = 1;
     }
 
-    public int getLevel() {
-        return level;
+    public Player() {
+        this("John Doe");
     }
 
-    public void setLevel(int level) {
-        this.level = level;
+    public void attack(Enemy enemy) {
+        int damage = this.attack - enemy.getDefense();
+        if (damage > 0) {
+            System.out.println(this.getName() + " ataca a " + enemy.getName() + " y le hace " + damage + " puntos de daño.");
+            enemy.takeDamage(damage);
+        } else {
+            System.out.println(this.getName() + " ataca a " + enemy.getName() + " pero no le hace daño.");
+        }
+    }
+
+    public void defend(Enemy enemy) {
+        int damage = enemy.getAttack() - this.defense;
+        this.takeDamage(damage);
+    }
+
+    public void levelUp() {
+        this.level++;
+        this.maxHP += 10;
+        this.hp = this.maxHP;
+        this.maxMP += 5;
+        this.mp = this.maxMP;
+        this.attack += 2;
+        this.defense += 1;
+    }
+
+    public void gainExperience(int exp) {
+        this.experience += exp;
+        if (this.experience >= 100 * this.level) {
+            levelUp();
+        }
+    }
+
+    public void gainGold(int gold) {
+        this.gold += gold;
+    }
+
+    public int getAttack() {
+        return attack;
+    }
+
+    public void setAttack(int attack) {
+        this.attack = attack;
+    }
+
+    public int getDefense() {
+        return defense;
+    }
+
+    public void setDefense(int defense) {
+        this.defense = defense;
     }
 
     public int getExperience() {
@@ -53,6 +78,14 @@ public class Player extends BasicCharacter {
 
     public void setExperience(int experience) {
         this.experience = experience;
+    }
+
+    public int getLevel() {
+        return level;
+    }
+
+    public void setLevel(int level) {
+        this.level = level;
     }
 
     public int getGold() {
