@@ -11,7 +11,7 @@ tags: [ "unitec", "rpg", "java", "swing" ]
 ---
 
 <figure style="text-align: center">
-  <img src="/images/brand.jpg" alt="UNITEC RPG" class="img-fluid" width="800">
+  <img src="/rpg-unitec/images/brand.jpg" alt="UNITEC RPG" class="img-fluid" width="800">
 </figure>
 
 UNITEC RPG es un juego de rol hecho en Java con Swing, que busca ser una herramienta para la creación de aventuras de

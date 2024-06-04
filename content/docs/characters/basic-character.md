@@ -149,9 +149,9 @@ de tu IDE o escribirlos manualmente. A continuación, se muestra un ejemplo de c
 {{% alert context="primary" %}}
 En IntelliJ puedes invocar la autogeneración mediante las teclas `Ctrl` + `Insert` y seleccionar la
 opción `Getter and Setter`.
-{{< figure src="/images/start/img_5.png" alt="Menu Generate"  >}}
+{{< figure src="/rpg-unitec/images/start/img_5.png" alt="Menu Generate"  >}}
 Posteriormente seleccionar todos los atributos de la clase y por último dar clic al botón `OK`.
-{{< figure src="/images/start/img_6.png" alt="Selección de Atributos"  >}}
+{{< figure src="/rpg-unitec/images/start/img_6.png" alt="Selección de Atributos"  >}}
 Este proceso puedes realizarlo en todas las clases del proyecto en las que necesites los métodos `getters` y `setters`.
 {{% /alert %}}
 
@@ -160,9 +160,9 @@ Así mismo deberás crear un nuevo constructor sin parámetros para inicializar 
 {{% alert context="primary" %}}
 En IntelliJ puedes invocar la autogeneración mediante las teclas `Ctrl` + `Insert` y seleccionar la
 opción `Constructor`.
-{{< figure src="/images/start/img_5.png" alt="Menu Generate"  >}}
+{{< figure src="/rpg-unitec/images/start/img_5.png" alt="Menu Generate"  >}}
 Posteriormente seleccionar todos los atributos de la clase y por último dar clic al botón `OK`.
-{{< figure src="/images/start/img_7.png" alt="Selección de Atributos"  >}}
+{{< figure src="/rpg-unitec/images/start/img_7.png" alt="Selección de Atributos"  >}}
 Este proceso puedes realizarlo en todas las clases del proyecto en las que necesites un constructor sin parámetros.
 {{% /alert %}}
 
