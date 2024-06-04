@@ -84,38 +84,6 @@ paquete `unitec.rpg.entities` y agregar el siguiente código:
         public void setName(String name) {
             this.name = name;
         }
-    
-        public int getHP() {
-            return hp;
-        }
-    
-        public void setHP(int hp) {
-            this.hp = hp;
-        }
-    
-        public int getMaxHP() {
-            return maxHP;
-        }
-    
-        public void setMaxHP(int maxHP) {
-            this.maxHP = maxHP;
-        }
-    
-        public int getMP() {
-            return mp;
-        }
-    
-        public void setMP(int mp) {
-            this.mp = mp;
-        }
-    
-        public int getMaxMP() {
-            return maxMP;
-        }
-    
-        public void setMaxMP(int maxMP) {
-            this.maxMP = maxMP;
-        }
 
         // Getters and Setters
     }
