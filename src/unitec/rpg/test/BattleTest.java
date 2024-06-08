@@ -15,20 +15,12 @@ public class BattleTest {
 
         // Imprimir los atributos del jugador y el enemigo
         System.out.println("Jugador: " + player.getName());
-        System.out.println("Salud: " + player.getHP() + "/" + player.getMaxHP());
-        System.out.println("Magía: " + player.getMP() + "/" + player.getMaxMP());
-        System.out.println("Ataque: " + player.getAttack());
-        System.out.println("Defensa: " + player.getDefense());
-        System.out.println("Experiencia: " + player.getExperience());
+        printData(player.getHP(), player.getMaxHP(), player.getMP(), player.getMaxMP(), player.getAttack(), player.getDefense(), player.getExperience(), player);
         System.out.println("Nivel: " + player.getLevel());
         System.out.println("Oro: " + player.getGold());
 
         System.out.println("Enemigo: " + enemy.getName());
-        System.out.println("Salud: " + enemy.getHP() + "/" + enemy.getMaxHP());
-        System.out.println("Magía: " + enemy.getMP() + "/" + enemy.getMaxMP());
-        System.out.println("Ataque: " + enemy.getAttack());
-        System.out.println("Defensa: " + enemy.getDefense());
-        System.out.println("Experiencia: " + enemy.getExperience());
+        printData(enemy.getHP(), enemy.getMaxHP(), enemy.getMP(), enemy.getMaxMP(), enemy.getAttack(), enemy.getDefense(), enemy.getExperience(), player);
         System.out.println("Oro: " + enemy.getGold());
 
         // Realizar una batalla entre el jugador y el enemigo
@@ -44,5 +36,13 @@ public class BattleTest {
         } else {
             System.out.println("¡" + enemy.getName() + " ha derrotado a " + player.getName() + "!");
         }
+    }
+
+    private static void printData(int hp, int maxHP, int mp, int maxMP, int attack, int defense, int experience, Player player) {
+        System.out.println("Salud: " + hp + "/" + maxHP);
+        System.out.println("Magía: " + mp + "/" + maxMP);
+        System.out.println("Ataque: " + attack);
+        System.out.println("Defensa: " + defense);
+        System.out.println("Experiencia: " + experience);
     }
 }

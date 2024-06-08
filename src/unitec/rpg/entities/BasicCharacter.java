@@ -1,6 +1,6 @@
 package unitec.rpg.entities;
 
-public class BasicCharacter {
+public abstract class BasicCharacter {
 
     protected String name;
     protected int hp;
