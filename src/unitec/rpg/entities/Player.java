@@ -2,8 +2,6 @@ package unitec.rpg.entities;
 
 public class Player extends BasicCharacter {
 
-    private int attack;
-    private int defense;
     private int experience;
     private int level;
     private int gold;
@@ -20,22 +18,8 @@ public class Player extends BasicCharacter {
         this("John Doe");
     }
 
-    public void attack(Enemy enemy) {
-        int damage = this.attack - enemy.getDefense();
-        if (damage > 0) {
-            System.out.println(this.getName() + " ataca a " + enemy.getName() + " y le hace " + damage + " puntos de daño.");
-            enemy.takeDamage(damage);
-        } else {
-            System.out.println(this.getName() + " ataca a " + enemy.getName() + " pero no le hace daño.");
-        }
-    }
-
-    public void defend(Enemy enemy) {
-        int damage = enemy.getAttack() - this.defense;
-        this.takeDamage(damage);
-    }
-
     public void levelUp() {
+
         this.level++;
         this.maxHP += 10;
         this.hp = this.maxHP;
@@ -54,22 +38,6 @@ public class Player extends BasicCharacter {
 
     public void gainGold(int gold) {
         this.gold += gold;
-    }
-
-    public int getAttack() {
-        return attack;
-    }
-
-    public void setAttack(int attack) {
-        this.attack = attack;
-    }
-
-    public int getDefense() {
-        return defense;
-    }
-
-    public void setDefense(int defense) {
-        this.defense = defense;
     }
 
     public int getExperience() {

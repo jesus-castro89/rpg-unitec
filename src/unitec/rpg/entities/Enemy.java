@@ -2,8 +2,6 @@ package unitec.rpg.entities;
 
 public class Enemy extends BasicCharacter {
 
-    private int attack;
-    private int defense;
     private int experience;
     private int gold;
 
@@ -19,47 +17,19 @@ public class Enemy extends BasicCharacter {
         this("Goblin");
     }
 
-    public void attack(Player player) {
-        int damage = this.attack - player.getDefense();
-        if (damage > 0) {
-            player.takeDamage(damage);
-            System.out.println(this.getName() + " ataca a " + player.getName() + " y le hace " + damage + " puntos de daño.");
-        } else {
-            System.out.println(this.getName() + " ataca a " + player.getName() + " pero no le hace daño.");
-        }
+    public String dropLoot(Player player) {
+
+        return gainExperience(player) + "\n" + gainGold(player);
     }
 
-    public void defend() {
-        System.out.println(this.getName() + " se defiende.");
+    public String gainExperience(Player player) {
+
+        return String.format("%s gana %d puntos de experiencia.", player.getName(), this.experience);
     }
 
-    public void dropLoot(Player player) {
-        player.gainExperience(this.experience);
-        player.gainGold(this.gold);
-    }
+    public String gainGold(Player player) {
 
-    public void gainExperience(Player player) {
-        System.out.println(player.getName() + " gana " + this.experience + " puntos de experiencia.");
-    }
-
-    public void gainGold(Player player) {
-        System.out.println(player.getName() + " gana " + this.gold + " monedas de oro.");
-    }
-
-    public int getAttack() {
-        return attack;
-    }
-
-    public void setAttack(int attack) {
-        this.attack = attack;
-    }
-
-    public int getDefense() {
-        return defense;
-    }
-
-    public void setDefense(int defense) {
-        this.defense = defense;
+        return String.format("%s gana %d monedas de oro.", player.getName(), this.gold);
     }
 
     public int getExperience() {

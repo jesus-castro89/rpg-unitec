@@ -1,5 +1,5 @@
 ---
-weight: 303
+weight: 203
 title: "El Jugador"
 description: "Creando al jugador principal."
 icon: "swords"

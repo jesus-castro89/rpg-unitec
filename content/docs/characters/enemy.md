@@ -1,5 +1,5 @@
 ---
-weight: 304
+weight: 204
 title: "El enemigo básico"
 description: "Creando el enemigo básico."
 icon: "swords"

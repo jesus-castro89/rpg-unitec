@@ -1,5 +1,5 @@
 ---
-weight: 305
+weight: 205
 title: "Probando el combate"
 description: "Pruebas de la clase Player y Enemy."
 icon: "science"

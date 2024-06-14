@@ -1,5 +1,5 @@
 ---
-weight: 302
+weight: 202
 title: "Probando BasicCharacter"
 description: "Pruebas de la clase BasicCharacter."
 icon: "science"

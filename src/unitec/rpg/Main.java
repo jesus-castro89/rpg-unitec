@@ -1,5 +1,7 @@
 package unitec.rpg;
 
+import unitec.rpg.ui.windows.WelcomeWindow;
+
 /**
  * Clase principal de la aplicación.
  */
@@ -11,6 +13,7 @@ public class Main {
      * @param args Argumentos de la línea de comandos.
      */
     public static void main(String[] args) {
-        System.out.println("¡Hola UNITEC RPG!");
+
+        WelcomeWindow welcomeWindow = new WelcomeWindow();
     }
 }

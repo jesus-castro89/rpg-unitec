@@ -7,6 +7,8 @@ public class BasicCharacter {
     protected int maxHP;
     protected int mp;
     protected int maxMP;
+    protected int attack;
+    protected int defense;
 
     public BasicCharacter(String name) {
         this.name = name;
@@ -20,22 +22,40 @@ public class BasicCharacter {
         this("John Doe");
     }
 
-    public void takeDamage(int damage) {
-        this.hp -= damage;
-        if (this.hp < 0) {
-            this.hp = 0;
+    public String attack(BasicCharacter character) {
+
+        int damage = this.attack - character.getDefense();
+        String message;
+        if (damage > 0) {
+            message = String.format("%s ataca a %s y le hace %d puntos de daño.\n", this.getName(), character.getName(),
+                    damage);
+            message += character.takeDamage(damage);
+        } else {
+            message = String.format("%s ataca a %s pero no le hace daño.\n", this.getName(), character.getName());
         }
+        return message;
+    }
+
+    public void defend(BasicCharacter character) {
+
+        int damage = character.getAttack() - this.defense;
+        this.takeDamage(damage);
+    }
+
+    public String takeDamage(int damage) {
+
+        String message;
+        this.hp -= damage;
+        message = String.format("%s recibe %d puntos de daño.\n", this.getName(), damage);
+        if (this.hp <= 0) {
+
+            message += String.format("%s ha muerto.\n", this.getName());
+        }
+        return message;
     }
 
     public boolean isAlive() {
         return this.hp > 0;
-    }
-
-    public void defend(int damage) {
-        this.hp -= damage;
-        if (this.hp < 0) {
-            this.hp = 0;
-        }
     }
 
     @Override
@@ -87,5 +107,21 @@ public class BasicCharacter {
 
     public void setMaxMP(int maxMP) {
         this.maxMP = maxMP;
+    }
+
+    public int getAttack() {
+        return attack;
+    }
+
+    public void setAttack(int attack) {
+        this.attack = attack;
+    }
+
+    public int getDefense() {
+        return defense;
+    }
+
+    public void setDefense(int defense) {
+        this.defense = defense;
     }
 }

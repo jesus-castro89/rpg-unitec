@@ -1,5 +1,5 @@
 ---
-weight: 301
+weight: 201
 title: "BasicCharacter"
 description: "Creando el personaje básico."
 icon: "person"
