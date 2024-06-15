@@ -33,7 +33,7 @@ public class WelcomeWindow extends JFrame {
                 ¡Que te diviertas!
                 """);
         addTextToDesktop();
-        textArea.setFont(new Font("Arial", Font.BOLD, 16));
+        textArea.setFont(new Font("Arial", Font.BOLD, 12));
         textArea.setEditable(false);
         textArea.setLineWrap(true);
         textArea.setWrapStyleWord(true);
