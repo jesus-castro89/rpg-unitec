@@ -1,5 +1,7 @@
 package unitec.rpg.entities;
 
+import unitec.rpg.entities.enums.Stats;
+
 public class Player extends BasicCharacter {
 
     private int experience;
@@ -8,8 +10,19 @@ public class Player extends BasicCharacter {
 
     public Player(String name) {
         super(name);
-        this.attack = 10;
-        this.defense = 5;
+        this.stats.put(Stats.HP, 100);
+        this.stats.put(Stats.MAX_HP, 100);
+        this.stats.put(Stats.MP, 50);
+        this.stats.put(Stats.MAX_MP, 50);
+        this.stats.put(Stats.ATTACK, 10);
+        this.stats.put(Stats.DEFENSE, 5);
+        this.stats.put(Stats.SPEED, 5);
+        this.stats.put(Stats.LUCK, 5);
+        this.stats.put(Stats.ACCURACY, 5);
+        this.stats.put(Stats.EVASION, 5);
+        this.stats.put(Stats.CRITICAL_HIT_CHANCE, 5);
+        this.stats.put(Stats.CRITICAL_HIT_DAMAGE, 150);
+        this.gold = 0;
         this.experience = 0;
         this.level = 1;
     }
@@ -21,12 +34,16 @@ public class Player extends BasicCharacter {
     public void levelUp() {
 
         this.level++;
-        this.maxHP += 10;
-        this.hp = this.maxHP;
-        this.maxMP += 5;
-        this.mp = this.maxMP;
-        this.attack += 2;
-        this.defense += 1;
+        this.increaseStat(Stats.MAX_HP, 10);
+        this.increaseStat(Stats.MAX_MP, 5);
+        this.increaseStat(Stats.ATTACK, 2);
+        this.increaseStat(Stats.DEFENSE, 1);
+        this.increaseStat(Stats.SPEED, 1);
+        this.increaseStat(Stats.LUCK, 1);
+        this.increaseStat(Stats.ACCURACY, 1);
+        this.increaseStat(Stats.EVASION, 1);
+        this.increaseStat(Stats.CRITICAL_HIT_CHANCE, 1);
+        this.experience = 0;
     }
 
     public void gainExperience(int exp) {
