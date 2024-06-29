@@ -5,26 +5,21 @@ import unitec.rpg.entities.Player;
 import unitec.rpg.entities.enums.Stats;
 
 import javax.swing.*;
+import javax.swing.border.LineBorder;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.awt.event.ComponentAdapter;
-import java.awt.event.ComponentEvent;
+import java.awt.image.BufferedImage;
 
 public class WelcomeWindow extends JFrame {
 
     private JPanel mainPanel;
     private JTextArea textArea;
     private JScrollPane scrollPane;
-    private JButton button1;
-    private JLabel hpBar;
-    private JPanel hpPanel;
-    private JPanel mpPanel;
-    private JLabel mpBar;
+    private JPanel topPanel;
 
     public WelcomeWindow() {
 
         super("Welcome to the RPG");
+        topPanel.setPreferredSize(new Dimension(1280, 100));
         initTextArea();
         setContentPane(createDesktop());
         pack();
@@ -32,17 +27,6 @@ public class WelcomeWindow extends JFrame {
         setResizable(false);
         setVisible(true);
         setLocationRelativeTo(null);
-        button1.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                JInternalFrame internalFrame = new JInternalFrame("Internal Frame", true, true, true, true);
-                internalFrame.setBounds(0, 0, 640, 360);
-                internalFrame.add(new JLabel("Internal Frame"));
-                getContentPane().add(internalFrame);
-                ((JDesktopPane) getContentPane()).setLayer(internalFrame, JLayeredPane.PALETTE_LAYER);
-                internalFrame.setVisible(true);
-            }
-        });
     }
 
     private void initTextArea() {
@@ -59,6 +43,7 @@ public class WelcomeWindow extends JFrame {
         textArea.setWrapStyleWord(true);
         textArea.setOpaque(false);
         textArea.setAutoscrolls(true);
+        scrollPane.setBorder(new LineBorder(new Color(0x803196BE, true), 5));
         scrollPane.setAutoscrolls(true);
         scrollPane.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
         scrollPane.setHorizontalScrollBarPolicy(ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
@@ -69,7 +54,7 @@ public class WelcomeWindow extends JFrame {
 
         JDesktopPane desktopPane = new JDesktopPane();
         desktopPane.setOpaque(true);
-        desktopPane.setPreferredSize(new Dimension(1280, 720));
+        desktopPane.setPreferredSize(new Dimension(1280, 680));
         desktopPane.setSize(desktopPane.getPreferredSize());
         mainPanel.setBounds(0, 0, desktopPane.getWidth(), desktopPane.getHeight());
         mainPanel.setOpaque(true);
@@ -109,5 +94,27 @@ public class WelcomeWindow extends JFrame {
                 break;
             }
         }
+    }
+
+    @Override
+    public void paint(Graphics g) {
+        super.paint(g);
+        Graphics2D g2d = (Graphics2D) g;
+        g2d.setRenderingHint(RenderingHints.KEY_ANTIALIASING,
+                RenderingHints.VALUE_ANTIALIAS_ON);
+    }
+
+    private void createUIComponents() {
+        scrollPane = new JScrollPane() {
+            @Override
+            protected void paintComponent(Graphics g) {
+                super.paintComponent(g);
+                Graphics2D g2d = (Graphics2D) g;
+                Image image = new ImageIcon("img/ui/panel/textPanel.png").getImage();
+                g2d.setRenderingHint(RenderingHints.KEY_ANTIALIASING,
+                        RenderingHints.VALUE_ANTIALIAS_ON);
+                g2d.drawImage(new BufferedImage("img/ui/panel/textPanel.png", 0, 0, null), 0, 0, getWidth(), getHeight(), null);
+            }
+        };
     }
 }
