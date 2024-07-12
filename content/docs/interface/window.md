@@ -1,5 +1,5 @@
 ---
-weight: 301
+weight: 401
 title: "La primera ventana"
 description: "Primera ventana de la aplicación"
 icon: "preview"

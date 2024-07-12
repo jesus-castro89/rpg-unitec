@@ -1,5 +1,5 @@
 ---
-weight: 206
+weight: 306
 title: "Cambiando el personaje a una clase abstracta"
 description: "Creando una clase abstracta para el personaje."
 icon: "science"

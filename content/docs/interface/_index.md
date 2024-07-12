@@ -1,5 +1,5 @@
 ---
-weight: 300
+weight: 400
 title: "3. La primera interfaz"
 description: "La primera interfaz de la aplicación"
 icon: "window"

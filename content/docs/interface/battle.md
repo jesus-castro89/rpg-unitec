@@ -1,5 +1,5 @@
 ---
-weight: 302
+weight: 402
 title: "La batalla"
 description: "Imprimamos la batalla en la consola"
 icon: "swords"
