@@ -106,8 +106,10 @@ public class TestAnimation extends JFrame {
     }
 
     private void createUIComponents() {
-        character = new Character("img/actor.png", 64, 64, 6, 9);
-        character.addAnimation("idle", 10, true, 6, 7, 8);
+        character = new Character("img/actor.png", 64, 64,
+                6, 9);
+        character.addAnimation("idle", 3, true,
+                6, 7, 8);
         character.addAnimation("attack", 5, false, 33, 34, 35, 3, 4, 5);
         character.addAnimation("evade", 5, false, 51, 52, 53);
         character.addAnimation("damage", 5, false, 42, 43, 44);
@@ -119,7 +121,7 @@ public class TestAnimation extends JFrame {
         animationLabel.setPreferredSize(animationLabel.getSize());
 
         Character attack = new Character("img/animations/fire_spin.png", 128, 128, 4, 4);
-        attack.addAnimation("explosion", 5, false, 1, 2, 3, 4, 5, 6, 7, 8, 9,10);
+        attack.addAnimation("explosion", 2, true, 1, 2, 3, 4, 5, 6, 7, 8, 9,10);
         attackLabel = new AnimationLabel(attack, 5);
         ((AnimationLabel) attackLabel).playAnimation("explosion");
         ((AnimationLabel) attackLabel).start();
