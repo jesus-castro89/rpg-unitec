@@ -20,22 +20,9 @@ public class InternalFrameUI extends BasicInternalFrameUI {
      * @param b the internal frame
      */
     public InternalFrameUI(JInternalFrame b) {
+
         super(b);
-        JPanel contentPanel = new JPanel() {
-            @Override
-            protected void paintComponent(Graphics g) {
-                super.paintComponent(g);
-                ImageIcon imageIcon = new ImageIcon("img/panels/background.png");
-                Graphics2D g2d = (Graphics2D) g;
-                g2d.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
-                g2d.setRenderingHint(RenderingHints.KEY_INTERPOLATION, RenderingHints.VALUE_INTERPOLATION_BILINEAR);
-                g2d.drawImage(imageIcon.getImage(), 0, 0, getWidth(), getHeight(), this);
-                g2d.dispose();
-            }
-        };
-        contentPanel.setOpaque(false);
-        contentPanel.setBorder(new EmptyBorder(10, 10, 10, 10));
-        contentPanel.setBackground(Color.PINK);
+        JPanel contentPanel = new InventoryPanel();
         b.setContentPane(contentPanel);
         b.setOpaque(false);
         b.setBorder(null);
@@ -45,7 +32,6 @@ public class InternalFrameUI extends BasicInternalFrameUI {
                 b.getComponentAt(initialClick);
             }
         });
-
         b.addMouseMotionListener(new MouseAdapter() {
             @Override
             public void mouseDragged(MouseEvent e) {
@@ -64,6 +50,26 @@ public class InternalFrameUI extends BasicInternalFrameUI {
                 b.setLocation(X, Y);
             }
         });
+    }
+
+    private JPanel getjPanel() {
+
+        JPanel contentPanel = new JPanel() {
+            @Override
+            protected void paintComponent(Graphics g) {
+                super.paintComponent(g);
+                ImageIcon imageIcon = new ImageIcon("img/panels/background.png");
+                Graphics2D g2d = (Graphics2D) g;
+                g2d.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
+                g2d.setRenderingHint(RenderingHints.KEY_INTERPOLATION, RenderingHints.VALUE_INTERPOLATION_BILINEAR);
+                g2d.drawImage(imageIcon.getImage(), 0, 0, getWidth(), getHeight(), this);
+                g2d.dispose();
+            }
+        };
+        contentPanel.setOpaque(false);
+        contentPanel.setBorder(new EmptyBorder(10, 10, 10, 10));
+        contentPanel.setBackground(Color.PINK);
+        return contentPanel;
     }
 
     @Override
