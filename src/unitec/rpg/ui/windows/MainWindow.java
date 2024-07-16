@@ -1,17 +1,13 @@
 package unitec.rpg.ui.windows;
 
-import unitec.rpg.ui.labels.BarLabel;
-import unitec.rpg.ui.labels.BarType;
-import unitec.rpg.ui.labels.ImageLabel;
+import unitec.rpg.ui.buttons.*;
+import unitec.rpg.ui.labels.*;
 import unitec.rpg.ui.panels.DesktopUI;
-import unitec.rpg.ui.panels.InternalFrameUI;
 import unitec.rpg.ui.panels.PanelUI;
 
 import javax.swing.*;
 import javax.swing.border.LineBorder;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 
 public class MainWindow extends JFrame {
 
@@ -23,14 +19,19 @@ public class MainWindow extends JFrame {
     private JLabel lifeBar;
     private JLabel magicBar;
     private JLabel expBar;
-    private JButton button1;
+    private JButton inventoryButton;
     private JLabel npcLabel;
     private JLabel playerLabel;
-    private JButton button2;
-    private JButton button3;
-    private JButton button4;
-    private JButton button5;
-    private JTextArea TEXTOTextArea;
+    private JButton attackButton;
+    private JButton saveButton;
+    private JButton fleeButton;
+    private JButton exitButton;
+    private JTextArea dialogArea;
+    private JPanel dialogPanel;
+    private JScrollPane dialogScroll;
+    private JLabel goldLabel;
+    private JButton shopButton;
+    private JButton blackSmithButton;
     private JDesktopPane desktopPane;
 
     public MainWindow() {
@@ -42,21 +43,7 @@ public class MainWindow extends JFrame {
         setLocationRelativeTo(null);
         setResizable(false);
         setVisible(true);
-        playerLabel.setBorder(new LineBorder(Color.BLUE, 5));
-        npcLabel.setBorder(new LineBorder(Color.RED, 5));
-        button1.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                JInternalFrame internalFrame = new JInternalFrame("Internal Frame",
-                        false, true, false, false);
-                internalFrame.setUI(new InternalFrameUI(internalFrame));
-                internalFrame.setSize(640, 200);
-                internalFrame.setLocation(50, 50);
-                internalFrame.setVisible(true);
-                internalFrame.setBorder(null);
-                desktopPane.add(internalFrame, JLayeredPane.PALETTE_LAYER);
-            }
-        });
+        npcLabel.setBorder(new LineBorder(Color.BLACK, 1));
     }
 
     private void createDesktop() {
@@ -70,21 +57,44 @@ public class MainWindow extends JFrame {
         topPanel.setUI(new PanelUI());
         centerPanel.setUI(new PanelUI());
         bottomPanel.setUI(new PanelUI());
+        dialogPanel.setUI(new PanelUI());
+        //Configuramos el cuadro de diálogo.
+        dialogScroll.setOpaque(false);
+        dialogScroll.getViewport().setOpaque(false);
+        dialogScroll.getVerticalScrollBar().setOpaque(false);
+        dialogScroll.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
+        dialogScroll.setHorizontalScrollBar(null);
+        dialogScroll.setBorder(BorderFactory.createEmptyBorder());
+        dialogArea.setOpaque(false);
+        dialogArea.setFont(new Font("Arial", Font.PLAIN, 14));
+        dialogArea.setForeground(Color.WHITE);
+        dialogArea.setEditable(false);
+        dialogArea.setLineWrap(true);
+        dialogArea.setWrapStyleWord(true);
         // Configuramos los tamaños de los paneles.
         topPanel.setSize(topPanel.getPreferredSize());
-        topPanel.setBorder(new LineBorder(Color.BLACK, 5));
         centerPanel.setSize(centerPanel.getPreferredSize());
-        centerPanel.setBorder(new LineBorder(Color.BLACK, 5));
         bottomPanel.setSize(bottomPanel.getPreferredSize());
-        bottomPanel.setBorder(new LineBorder(Color.BLACK, 5));
         mainPanel.setBounds(0, 0, desktopPane.getWidth(), desktopPane.getHeight());
         desktopPane.add(mainPanel, JLayeredPane.DEFAULT_LAYER);
     }
 
     private void createUIComponents() {
+        //Etiquetas
         portraitLabel = new ImageLabel(new ImageIcon("img/player/portrait.png"));
         lifeBar = new BarLabel(BarType.LIFE);
         magicBar = new BarLabel(BarType.MAGIC);
         expBar = new BarLabel(BarType.EXPERIENCE);
+        playerLabel = new PlayerLabel();
+        goldLabel = new GoldLabel();
+        npcLabel = new NpcLabel("img/npc/blacksmith/1.png");
+        //Botones
+        inventoryButton = new InventoryButton();
+        shopButton = new ShopButton();
+        blackSmithButton = new BlackSmithButton();
+        attackButton = new AttackButton();
+        fleeButton = new FleeButton();
+        saveButton = new SaveButton();
+        exitButton = new ExitButton();
     }
 }

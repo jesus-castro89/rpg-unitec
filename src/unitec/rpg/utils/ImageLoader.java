@@ -20,6 +20,7 @@ public class ImageLoader {
         try {
             return ImageIO.read(new File(path));
         } catch (IOException e) {
+            System.out.println(e.getMessage());
             e.printStackTrace();
         }
         return null;
