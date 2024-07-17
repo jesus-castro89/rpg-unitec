@@ -11,7 +11,6 @@ public class BarLabelUI extends BasicLabelUI {
     @Override
     protected void installDefaults(JLabel c) {
 
-        c.setFont(c.getFont().deriveFont(15f));
         c.setOpaque(false);
         c.setForeground(Color.WHITE);
         c.setVerticalTextPosition(SwingConstants.BOTTOM);
