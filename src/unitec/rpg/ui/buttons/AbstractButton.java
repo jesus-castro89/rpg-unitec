@@ -1,5 +1,7 @@
 package unitec.rpg.ui.buttons;
 
+import unitec.rpg.ui.ButtonUI;
+
 import javax.swing.*;
 import java.awt.*;
 
@@ -8,7 +10,7 @@ public abstract class AbstractButton extends JButton {
     public AbstractButton(String text, boolean player) {
 
         super(text);
-        setUI(new GameButtonUI(player));
+        setUI(new ButtonUI(player));
     }
 
     public abstract void addAction();

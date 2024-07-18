@@ -1,17 +1,15 @@
-package unitec.rpg.ui.buttons;
+package unitec.rpg.ui;
 
-import unitec.rpg.utils.ImageCache;
-import unitec.rpg.utils.ImageLoader;
+import unitec.rpg.ui.cache.FontCache;
+import unitec.rpg.ui.cache.ImageCache;
 
 import javax.swing.*;
 import javax.swing.AbstractButton;
 import javax.swing.plaf.basic.BasicButtonUI;
 import java.awt.*;
 import java.awt.image.BufferedImage;
-import java.io.File;
-import java.io.IOException;
 
-public class GameButtonUI extends BasicButtonUI {
+public class ButtonUI extends BasicButtonUI {
 
     /**
      * Indica si el botón es de un jugador o del juego.
@@ -22,7 +20,7 @@ public class GameButtonUI extends BasicButtonUI {
      */
     private BufferedImage leftSide, centerSide, rightSide;
 
-    public GameButtonUI(boolean player) {
+    public ButtonUI(boolean player) {
 
         this.player = player;
         loadCache();
@@ -32,32 +30,32 @@ public class GameButtonUI extends BasicButtonUI {
 
         // Imágenes de los botones de los lados. Para el jugador, en modo idle
         ImageCache.addImage("leftSidePlayerIdle",
-                ImageLoader.loadImage("img/buttons/idle/user/leftSide.png"));
+                "img/buttons/idle/user/leftSide.png");
         ImageCache.addImage("centerSidePlayerIdle",
-                ImageLoader.loadImage("img/buttons/idle/user/centerSide.png"));
+                "img/buttons/idle/user/centerSide.png");
         ImageCache.addImage("rightSidePlayerIdle",
-                ImageLoader.loadImage("img/buttons/idle/user/rightSide.png"));
+                "img/buttons/idle/user/rightSide.png");
         // Imágenes de los botones de los lados. Para el jugador, en modo hover
         ImageCache.addImage("leftSidePlayerHover",
-                ImageLoader.loadImage("img/buttons/hover/user/leftSide.png"));
+                "img/buttons/hover/user/leftSide.png");
         ImageCache.addImage("centerSidePlayerHover",
-                ImageLoader.loadImage("img/buttons/hover/user/centerSide.png"));
+                "img/buttons/hover/user/centerSide.png");
         ImageCache.addImage("rightSidePlayerHover",
-                ImageLoader.loadImage("img/buttons/hover/user/rightSide.png"));
+                "img/buttons/hover/user/rightSide.png");
         // Imágenes de los botones de los lados. Para el juego, en modo idle
         ImageCache.addImage("leftSideGameIdle",
-                ImageLoader.loadImage("img/buttons/idle/ui/leftSide.png"));
+                "img/buttons/idle/ui/leftSide.png");
         ImageCache.addImage("centerSideGameIdle",
-                ImageLoader.loadImage("img/buttons/idle/ui/centerSide.png"));
+                "img/buttons/idle/ui/centerSide.png");
         ImageCache.addImage("rightSideGameIdle",
-                ImageLoader.loadImage("img/buttons/idle/ui/rightSide.png"));
+                "img/buttons/idle/ui/rightSide.png");
         // Imágenes de los botones de los lados. Para el juego, en modo hover
         ImageCache.addImage("leftSideGameHover",
-                ImageLoader.loadImage("img/buttons/hover/ui/leftSide.png"));
+                "img/buttons/hover/ui/leftSide.png");
         ImageCache.addImage("centerSideGameHover",
-                ImageLoader.loadImage("img/buttons/hover/ui/centerSide.png"));
+                "img/buttons/hover/ui/centerSide.png");
         ImageCache.addImage("rightSideGameHover",
-                ImageLoader.loadImage("img/buttons/hover/ui/rightSide.png"));
+                "img/buttons/hover/ui/rightSide.png");
     }
 
     private void loadIdleImages() {
@@ -83,6 +81,8 @@ public class GameButtonUI extends BasicButtonUI {
     @Override
     protected void installDefaults(AbstractButton b) {
 
+        FontCache.addFont("Retron2000", "fonts/Retron2000.ttf");
+        Font font = FontCache.getFont("Retron2000").deriveFont(Font.BOLD, 14f);
         b.setDoubleBuffered(true);
         b.setOpaque(false);
         b.setBorderPainted(false);
@@ -90,12 +90,7 @@ public class GameButtonUI extends BasicButtonUI {
         b.setContentAreaFilled(false);
         b.setIconTextGap(5);
         b.setCursor(new Cursor(Cursor.HAND_CURSOR));
-        try {
-            Font font = Font.createFont(Font.TRUETYPE_FONT, new File("fonts/Retron2000.ttf")).deriveFont(Font.BOLD, 14f);
-            b.setFont(font);
-        } catch (FontFormatException | IOException e) {
-            throw new RuntimeException(e);
-        }
+        b.setFont(font);
     }
 
     @Override

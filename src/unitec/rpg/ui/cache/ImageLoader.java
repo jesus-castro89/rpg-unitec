@@ -1,11 +1,10 @@
-package unitec.rpg.utils;
+package unitec.rpg.ui.cache;
 
 import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
-import java.util.Objects;
 
 /**
  * Clase que se encarga de cargar las imágenes.
@@ -26,7 +25,6 @@ public class ImageLoader {
         } catch (IOException e) {
             JOptionPane.showConfirmDialog(null, "Error al cargar la imagen: " + path,
                     "Error", JOptionPane.DEFAULT_OPTION, JOptionPane.ERROR_MESSAGE);
-            e.printStackTrace();
         }
         return null;
     }

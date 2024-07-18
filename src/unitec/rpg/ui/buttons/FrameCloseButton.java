@@ -1,6 +1,6 @@
 package unitec.rpg.ui.buttons;
 
-import unitec.rpg.utils.ImageCache;
+import unitec.rpg.ui.cache.ImageCache;
 
 import javax.swing.*;
 
@@ -11,8 +11,8 @@ public class FrameCloseButton extends BasicIconButton {
     private final JInternalFrame parent;
 
     public FrameCloseButton(JInternalFrame parent) {
-        super(ImageCache.getImage("close", "img/buttons/close.png"),
-                ImageCache.getImage("closeHover", "img/buttons/close_hover.png"));
+        super(ImageCache.addImage("close", "img/buttons/close.png"),
+                ImageCache.addImage("closeHover", "img/buttons/close_hover.png"));
         this.parent = parent;
         setPreferredSize(ICON_BUTTON_SIZE);
     }

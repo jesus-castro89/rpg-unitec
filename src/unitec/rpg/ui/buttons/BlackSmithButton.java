@@ -1,13 +1,18 @@
 package unitec.rpg.ui.buttons;
 
+import unitec.rpg.ui.cache.ImageCache;
+
 import javax.swing.*;
 
 public class BlackSmithButton extends AbstractButton {
 
     public BlackSmithButton() {
+
         super("Herrero", true);
-        setIcon(new ImageIcon("img/icons/blackSmithIdle.png"));
-        setRolloverIcon(new ImageIcon("img/icons/blackSmithHover.png"));
+        ImageCache.addImage("blackSmithIdle", "img/icons/blackSmithIdle.png");
+        ImageCache.addImage("blackSmithHover", "img/icons/blackSmithHover.png");
+        setIcon(ImageCache.getImageIcon("blackSmithIdle"));
+        setRolloverIcon(ImageCache.getImageIcon("blackSmithHover"));
     }
 
     @Override

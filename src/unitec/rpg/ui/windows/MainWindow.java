@@ -3,7 +3,7 @@ package unitec.rpg.ui.windows;
 import unitec.rpg.ui.buttons.*;
 import unitec.rpg.ui.labels.*;
 import unitec.rpg.ui.panels.DesktopUI;
-import unitec.rpg.ui.panels.PanelUI;
+import unitec.rpg.ui.PanelUI;
 
 import javax.swing.*;
 import javax.swing.border.LineBorder;

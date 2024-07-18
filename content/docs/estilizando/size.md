@@ -50,4 +50,5 @@ interfaz contiene constantes que representan el tamaño de la ventana principal 
 inferior de la interfaz de usuario. Estas constantes nos permiten establecer un tamaño fijo para los componentes de la
 interfaz de usuario, lo que nos ayuda a diseñar una interfaz coherente y atractiva para nuestra aplicación.
 
-Esta interfaz se irá actualizando conforme vayamos necesitando más tamaños de componentes en nuestra aplicación.
+Esta interfaz se irá actualizando conforme vayamos necesitando más tamaños de componentes en nuestra aplicación,
+recuerda que deberás de añadir las dimensiones extras que consideres para tu aplicación.

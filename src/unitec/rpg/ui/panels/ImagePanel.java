@@ -1,6 +1,6 @@
 package unitec.rpg.ui.panels;
 
-import unitec.rpg.utils.ImageCache;
+import unitec.rpg.ui.cache.ImageCache;
 
 import javax.swing.*;
 import java.awt.*;
@@ -11,7 +11,7 @@ public class ImagePanel extends JPanel {
 
     public ImagePanel(String name, String path, int width, int height) {
 
-        background = new ImageIcon(ImageCache.getImage(name, path));
+        background = new ImageIcon(ImageCache.addImage(name, path));
         setPreferredSize(new Dimension(width, height));
         setSize(getPreferredSize());
         setOpaque(false);
