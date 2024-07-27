@@ -35,6 +35,7 @@ public class PanelUI extends BasicPanelUI {
 
         p.setOpaque(false);
         if (p.getName().equals("mainPanel")) {
+
             p.setBorder(ElementsDimension.MARGIN_BORDER);
         } else {
             p.setBorder(BorderFactory.createEmptyBorder());
@@ -50,6 +51,7 @@ public class PanelUI extends BasicPanelUI {
     public Dimension getPreferredSize(JComponent c) {
 
         return switch (c.getName()) {
+
             case "topPanel" -> ElementsDimension.TOP_PANEL_SIZE;
             case "centerPanel" -> ElementsDimension.CENTER_PANEL_SIZE;
             case "bottomPanel" -> ElementsDimension.BOTTOM_PANEL_SIZE;
@@ -72,6 +74,7 @@ public class PanelUI extends BasicPanelUI {
         g2d.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
         g2d.setRenderingHint(RenderingHints.KEY_INTERPOLATION, RenderingHints.VALUE_INTERPOLATION_BICUBIC);
         switch (c.getName()) {
+
             case "topPanel" -> image = ImageCache.getImage("topPanel");
             case "centerPanel" -> image = ImageCache.getImage("centerPanel");
             case "bottomPanel" -> image = ImageCache.getImage("bottomPanel");

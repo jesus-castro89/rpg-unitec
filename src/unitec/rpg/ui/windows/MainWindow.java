@@ -32,6 +32,7 @@ public class MainWindow extends JFrame {
     private JLabel goldLabel;
     private JButton shopButton;
     private JButton blackSmithButton;
+    private JLabel enemyBar;
     private JDesktopPane desktopPane;
 
     public MainWindow() {
@@ -83,18 +84,23 @@ public class MainWindow extends JFrame {
         //Etiquetas
         portraitLabel = new ImageLabel(new ImageIcon("img/player/portrait.png"));
         lifeBar = new BarLabel(BarType.LIFE);
+        enemyBar= new BarLabel(BarType.LIFE);
         magicBar = new BarLabel(BarType.MAGIC);
         expBar = new BarLabel(BarType.EXPERIENCE);
         playerLabel = new PlayerLabel();
         goldLabel = new GoldLabel();
         npcLabel = new NpcLabel("img/npc/blacksmith/1.png");
         //Botones
-        inventoryButton = new InventoryButton();
+        inventoryButton = new InventoryButton(this);
         shopButton = new ShopButton();
         blackSmithButton = new BlackSmithButton();
         attackButton = new AttackButton();
         fleeButton = new FleeButton();
         saveButton = new SaveButton();
         exitButton = new ExitButton();
+    }
+
+    public JDesktopPane getDesktopPane() {
+        return desktopPane;
     }
 }

@@ -5,7 +5,7 @@ import java.awt.*;
 
 public interface ElementsDimension {
 
-    int MARGIN = 1;
+    int MARGIN = 5;
     EmptyBorder MARGIN_BORDER = new EmptyBorder(MARGIN, MARGIN, MARGIN, MARGIN);
     Dimension ICON_BUTTON_SIZE = new Dimension(32, 32);
     Dimension WINDOW_SIZE = new Dimension(1280, 720);

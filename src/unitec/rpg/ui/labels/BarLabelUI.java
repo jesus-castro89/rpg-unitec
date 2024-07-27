@@ -11,10 +11,7 @@ public class BarLabelUI extends BasicLabelUI {
     @Override
     protected void installDefaults(JLabel c) {
 
-        c.setOpaque(false);
-        c.setForeground(Color.WHITE);
-        c.setVerticalTextPosition(SwingConstants.BOTTOM);
-        c.setHorizontalTextPosition(SwingConstants.RIGHT);
+        c.setForeground(new Color(241, 229, 227));
         c.setIconTextGap(30);
     }
 
