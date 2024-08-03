@@ -56,13 +56,13 @@ public class FireSlime extends SimpleSlime {
 
     protected String magmaBlast(Player player) {
 
-        player.takeDamage((int) (getStatus(Stats.ATTACK) * 1.5 - player.getStatus(Stats.DEFENSE));
+        player.takeDamage((int) (getStatus(Stats.ATTACK) * 1.5 - player.getStatus(Stats.DEFENSE)));
         return String.format("%s ataca a %s con una explosión de magma.", this.getName(), player.getName());
     }
 
     protected String burn(Player player) {
 
-        player.takeDamage((int) (getStatus(Stats.ATTACK) * 1.1 - player.getStatus(Stats.DEFENSE));
+        player.takeDamage((int) (getStatus(Stats.ATTACK) * 1.1 - player.getStatus(Stats.DEFENSE)));
         return String.format("%s ataca a %s con un ataque de quemadura.", this.getName(), player.getName());
     }
 }
