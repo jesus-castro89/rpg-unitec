@@ -1,6 +1,11 @@
 package unitec.rpg.ui.windows;
 
+import unitec.rpg.entities.Player;
+import unitec.rpg.entities.enemies.Enemy;
+import unitec.rpg.entities.enemies.EnemyFactory;
 import unitec.rpg.ui.buttons.*;
+import unitec.rpg.ui.cache.FontCache;
+import unitec.rpg.ui.cache.ImageCache;
 import unitec.rpg.ui.labels.*;
 import unitec.rpg.ui.panels.DesktopUI;
 import unitec.rpg.ui.PanelUI;
@@ -33,10 +38,14 @@ public class MainWindow extends JFrame {
     private JButton shopButton;
     private JButton blackSmithButton;
     private JLabel enemyBar;
+    private JLabel nameLabel;
+    private JLabel enemyName;
     private JDesktopPane desktopPane;
+    private Player player;
 
     public MainWindow() {
-        super("RPG Game");
+
+        setTitle("RPG Unitec");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         createDesktop();
         setContentPane(desktopPane);
@@ -44,7 +53,6 @@ public class MainWindow extends JFrame {
         setLocationRelativeTo(null);
         setResizable(false);
         setVisible(true);
-        npcLabel.setBorder(new LineBorder(Color.BLACK, 1));
     }
 
     private void createDesktop() {
@@ -81,15 +89,30 @@ public class MainWindow extends JFrame {
     }
 
     private void createUIComponents() {
+
+        player = new Player();
+        //Creamos las Etiquetas
+        ImageCache.addImage("textLabel", "img/labels/name_label.png");
+        FontCache.addFont("Retron", "fonts/Retron2000.ttf");
+        nameLabel = new ImageLabel(ImageCache.getImageIcon("textLabel"));
+        nameLabel.setText(player.getName() + " - Lvl. " + player.getLevel());
+        nameLabel.setFont(FontCache.getFont("Retron").deriveFont(Font.BOLD, 12f));
         //Etiquetas
-        portraitLabel = new ImageLabel(new ImageIcon("img/player/portrait.png"));
+        ImageCache.addImage("portrait", "img/player/portrait.png");
+        portraitLabel = new ImageLabel(ImageCache.getImageIcon("portrait"));
         lifeBar = new BarLabel(BarType.LIFE);
-        enemyBar= new BarLabel(BarType.LIFE);
+        enemyBar = new BarLabel(BarType.LIFE);
         magicBar = new BarLabel(BarType.MAGIC);
         expBar = new BarLabel(BarType.EXPERIENCE);
         playerLabel = new PlayerLabel();
         goldLabel = new GoldLabel();
-        npcLabel = new NpcLabel("img/npc/blacksmith/1.png");
+        //Creamos un enemigo
+        Enemy enemy = EnemyFactory.generateRegularEnemy(player);
+        enemyName = new ImageLabel(ImageCache.getImageIcon("textLabel"));
+        enemyName.setText(enemy != null ? enemy.getName() : null);
+        enemyName.setFont(FontCache.getFont("Retron").deriveFont(Font.BOLD, 14f));
+        //Creamos la etiqueta del enemigo
+        npcLabel = new NpcLabel(enemy != null ? enemy.getImage() : null, enemy != null && enemy.isBoss());
         //Botones
         inventoryButton = new InventoryButton(this);
         shopButton = new ShopButton();
@@ -102,5 +125,9 @@ public class MainWindow extends JFrame {
 
     public JDesktopPane getDesktopPane() {
         return desktopPane;
+    }
+
+    public Player getPlayer() {
+        return player;
     }
 }

@@ -8,21 +8,21 @@ import unitec.rpg.ui.cache.ImageCache;
 import javax.swing.*;
 
 @RegularEnemy
-public class FireSlime extends SimpleSlime {
+public class ThunderSlime extends SimpleSlime {
 
-    public FireSlime(Player player) {
+    public ThunderSlime(Player player) {
 
         super(player);
     }
 
     protected void initStats() {
 
-        this.name = "Slime de Fuego";
-        this.experience = 16;
-        this.gold = 12;
-        this.maxLevel = 16;
-        this.stats.put(Stats.HP, 16);
-        this.stats.put(Stats.ATTACK, 12);
+        this.name = "Slime Eléctrico";
+        this.experience = 15;
+        this.gold = 10;
+        this.maxLevel = 15;
+        this.stats.put(Stats.HP, 15);
+        this.stats.put(Stats.ATTACK, 10);
         this.stats.put(Stats.DEFENSE, 10);
         this.stats.put(Stats.SPEED, 10);
         this.stats.put(Stats.EVASION, 10);
@@ -35,19 +35,19 @@ public class FireSlime extends SimpleSlime {
         String message;
         double plainAttackChance = 0.50;
         double random = Math.random();
-        message = random < plainAttackChance ? plainAttack(player) : throwFireball(player);
+        message = random < plainAttackChance ? plainAttack(player) : throwThunder(player);
         return message;
     }
 
-    protected String throwFireball(Player player) {
+    protected String throwThunder(Player player) {
         int damage = (int) ((stats.get(Stats.ATTACK) * 1.50) - player.getStatus(Stats.DEFENSE));
         player.takeDamage(damage);
-        return String.format("%s lanza una bola de fuego a %s por %d puntos de daño.", name, player.getName(), damage);
+        return String.format("%s lanza un rayo a %s por %d puntos de daño.", name, player.getName(), damage);
     }
 
     @Override
     public ImageIcon getImage() {
-        ImageCache.addImage("FireSlime", "img/enemies/slimes/fire_slime.png");
-        return ImageCache.getImageIcon("FireSlime");
+        ImageCache.addImage("ThunderSlime", "img/enemies/slimes/thunder_slime.png");
+        return ImageCache.getImageIcon("ThunderSlime");
     }
 }

@@ -1,27 +1,45 @@
 package unitec.rpg.entities.enemies.slimes;
 
 import annotations.RegularEnemy;
-import unitec.rpg.entities.Enemy;
 import unitec.rpg.entities.Player;
+import unitec.rpg.entities.enemies.Enemy;
 import unitec.rpg.entities.enums.Stats;
+import unitec.rpg.ui.cache.ImageCache;
+
+import javax.swing.*;
 
 @RegularEnemy
 public class SimpleSlime extends Enemy {
 
-    public SimpleSlime() {
+    public SimpleSlime(Player player) {
 
-        super("Slime Básico");
-        stats.put(Stats.HP, 10);
-        stats.put(Stats.ATTACK, 2);
-        stats.put(Stats.DEFENSE, 1);
-        stats.put(Stats.ACCURACY, 50);
-        stats.put(Stats.EVASION, 10);
-        setExperience(5);
-        setGold(5);
+        super(player);
+    }
+
+    protected void initStats() {
+
+        this.name = "Slime";
+        this.experience = 10;
+        this.gold = 5;
+        this.maxLevel = 10;
+        this.stats.put(Stats.HP, 10);
+        this.stats.put(Stats.ATTACK, 5);
+        this.stats.put(Stats.DEFENSE, 5);
+        this.stats.put(Stats.SPEED, 5);
+        this.stats.put(Stats.EVASION, 5);
+        this.stats.put(Stats.ACCURACY, 5);
+        setStats(player);
     }
 
     @Override
-    protected String makeDecision(Player player) {
+    public ImageIcon getImage() {
+
+        ImageCache.addImage("slime", "img/enemies/slimes/basic_slime.png");
+        return new ImageIcon("img/enemies/slimes/basic_slime.png");
+    }
+
+    @Override
+    public String attack(Player player) {
 
         double decision = Math.random();
         double splashProbability = 0.3;

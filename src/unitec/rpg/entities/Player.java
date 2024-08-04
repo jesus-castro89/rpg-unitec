@@ -1,14 +1,17 @@
 package unitec.rpg.entities;
 
 import unitec.rpg.entities.enums.Stats;
+import unitec.rpg.items.Inventory;
 
 public class Player extends BasicCharacter {
 
     private int experience;
     private int level;
     private int gold;
+    private final Inventory inventory;
 
     public Player(String name) {
+
         super(name);
         this.stats.put(Stats.HP, 100);
         this.stats.put(Stats.MAX_HP, 100);
@@ -25,6 +28,7 @@ public class Player extends BasicCharacter {
         this.gold = 0;
         this.experience = 0;
         this.level = 1;
+        this.inventory = new Inventory();
     }
 
     public Player() {
@@ -79,5 +83,9 @@ public class Player extends BasicCharacter {
 
     public void setGold(int gold) {
         this.gold = gold;
+    }
+
+    public Inventory getInventory() {
+        return inventory;
     }
 }

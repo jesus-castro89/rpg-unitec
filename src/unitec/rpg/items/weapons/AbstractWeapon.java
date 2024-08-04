@@ -13,6 +13,7 @@ public abstract class AbstractWeapon extends Item {
     protected Rarity rarity;
 
     public AbstractWeapon(String name, String description, int price) {
+
         super(name, description, price);
         type = ItemType.WEAPON;
         rarity = switch (Math.random() < 0.1 ? 0 : Math.random() < 0.3 ? 1 : 2) {
