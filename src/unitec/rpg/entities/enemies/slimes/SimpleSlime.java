@@ -1,8 +1,8 @@
 package unitec.rpg.entities.enemies.slimes;
 
-import annotations.RegularEnemy;
 import unitec.rpg.entities.Player;
 import unitec.rpg.entities.enemies.Enemy;
+import unitec.rpg.entities.enemies.annotations.RegularEnemy;
 import unitec.rpg.entities.enums.Stats;
 import unitec.rpg.ui.cache.ImageCache;
 

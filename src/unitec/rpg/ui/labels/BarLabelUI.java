@@ -1,12 +1,44 @@
 package unitec.rpg.ui.labels;
 
+import unitec.rpg.ui.cache.FontCache;
 import unitec.rpg.ui.dimensions.ElementsDimension;
 
 import javax.swing.*;
+import javax.swing.border.LineBorder;
 import javax.swing.plaf.basic.BasicLabelUI;
 import java.awt.*;
 
 public class BarLabelUI extends BasicLabelUI {
+
+    private BarType type;
+
+    public BarLabelUI(BarType type) {
+
+        this.type = type;
+        //Esto permite agregar una fuente con su nombre y la dirección al archivo a la que hace referencia
+        FontCache.addFont("Gamer", "fonts/Gamer.ttf");
+    }
+
+    private int getBarValue(JLabel c) {
+        return ((BarLabel) c).getBarValue();
+    }
+
+    private int getMaxBarValue(JLabel c) {
+        return ((BarLabel) c).getMaxValue();
+    }
+
+    private int getBarWidth(JLabel c) {
+
+        int value = getBarValue(c);
+        int max = getMaxBarValue(c);
+        if (value > max) {
+            value = max;
+        }
+        if (value>0 && value <= 25) {
+            value = 18;
+        }
+        return (int) (value * 1.0 / max * 130);
+    }
 
     @Override
     protected void installDefaults(JLabel c) {
@@ -25,8 +57,10 @@ public class BarLabelUI extends BasicLabelUI {
         g2d.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
         g2d.setRenderingHint(RenderingHints.KEY_RENDERING, RenderingHints.VALUE_RENDER_QUALITY);
         g2d.setRenderingHint(RenderingHints.KEY_INTERPOLATION, RenderingHints.VALUE_INTERPOLATION_BICUBIC);
-        g2d.drawImage(((ImageIcon) ((JLabel) c).getIcon()).getImage(), 0, 0,
-                getPreferredSize(c).width, getPreferredSize(c).height, null);
+        g2d.drawImage(type.getContainer().getImage(), c.getWidth() - 150, 1, 150, 50, null);
+        g2d.drawImage(type.getBar().getImage(), 32, 10, getBarWidth((JLabel) c), 14, null);
+        g2d.drawImage(type.getIcon().getImage(), 0, 0, 51, 51, null);
+        g2d.setColor(Color.BLACK);
         paintEnabledText((JLabel) c, g, ((JLabel) c).getText(), textX, textY);
     }
 
