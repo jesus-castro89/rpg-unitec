@@ -16,14 +16,15 @@ public class SimpleSlime extends Enemy {
         super(player);
     }
 
+    @Override
     protected void initStats() {
 
         this.name = "Slime";
         this.experience = 10;
         this.gold = 5;
-        this.maxLevel = 10;
-        this.stats.put(Stats.HP, 10);
-        this.stats.put(Stats.ATTACK, 5);
+        this.maxLevel = 11;
+        this.stats.put(Stats.HP, 11);
+        this.stats.put(Stats.ATTACK, 6);
         this.stats.put(Stats.DEFENSE, 5);
         this.stats.put(Stats.SPEED, 5);
         this.stats.put(Stats.EVASION, 5);

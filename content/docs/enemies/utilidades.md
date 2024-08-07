@@ -15,6 +15,36 @@ En esta sección se presentan las utilidades que se pueden encontrar en el juego
 utilizar para mejorar la experiencia de juego, ya sea para obtener recursos, mejorar el equipo o simplemente para
 facilitar la exploración del mundo.
 
+## RegularEnemy
+
+{{< prism lang="java" line-numbers="true" >}}
+
+    package unitec.rpg.entities.enemies.annotations;
+    
+    import java.lang.annotation.*;
+    
+    @Target(ElementType.TYPE)
+    @Retention(RetentionPolicy.RUNTIME)
+    public @interface RegularEnemy {
+    }
+
+{{< /prism >}}
+
+## BossEnemy
+
+{{< prism lang="java" line-numbers="true" >}}
+
+    package unitec.rpg.entities.enemies.annotations;
+    
+    import java.lang.annotation.*;
+    
+    @Target(ElementType.TYPE)
+    @Retention(RetentionPolicy.RUNTIME)
+    public @interface BossEnemy {
+    }
+
+{{< /prism >}}
+
 ### Randomized
 
 La interfaz randomized es una herramienta que permite obtener valores aleatorios de diferentes tipos. Estos valores

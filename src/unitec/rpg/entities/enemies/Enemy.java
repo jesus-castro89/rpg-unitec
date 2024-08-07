@@ -6,7 +6,8 @@ import unitec.rpg.entities.enums.Stats;
 
 import javax.swing.*;
 
-public abstract class Enemy extends BasicCharacter {
+public abstract class Enemy
+        extends BasicCharacter {
 
     protected int experience;
     protected int gold;
