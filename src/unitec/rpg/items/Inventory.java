@@ -1,9 +1,10 @@
 package unitec.rpg.items;
 
 import javax.swing.*;
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class Inventory extends ArrayList<Item> {
+public class Inventory extends ArrayList<Item> implements Serializable {
 
     private int maxCapacity;
 

@@ -9,10 +9,12 @@ import unitec.rpg.ui.cache.ImageCache;
 import unitec.rpg.ui.labels.*;
 import unitec.rpg.ui.panels.DesktopUI;
 import unitec.rpg.ui.PanelUI;
+import unitec.rpg.util.FileManager;
 
 import javax.swing.*;
 import javax.swing.border.LineBorder;
 import java.awt.*;
+import java.io.File;
 
 public class MainWindow extends JFrame {
 
@@ -119,8 +121,13 @@ public class MainWindow extends JFrame {
         blackSmithButton = new BlackSmithButton();
         attackButton = new AttackButton();
         fleeButton = new FleeButton();
-        saveButton = new SaveButton();
+        saveButton = new SaveButton(this);
         exitButton = new ExitButton();
+    }
+
+    public void saveGame() {
+
+        FileManager.saveGame(player);
     }
 
     public JDesktopPane getDesktopPane() {

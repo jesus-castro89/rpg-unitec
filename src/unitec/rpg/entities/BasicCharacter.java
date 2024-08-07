@@ -2,9 +2,10 @@ package unitec.rpg.entities;
 
 import unitec.rpg.entities.enums.Stats;
 
+import java.io.Serializable;
 import java.util.HashMap;
 
-public abstract class BasicCharacter {
+public abstract class BasicCharacter implements Serializable {
 
     protected String name;
     protected HashMap<Stats, Integer> stats;

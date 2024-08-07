@@ -3,7 +3,9 @@ package unitec.rpg.entities;
 import unitec.rpg.entities.enums.Stats;
 import unitec.rpg.items.Inventory;
 
-public class Player extends BasicCharacter {
+import java.io.Serializable;
+
+public class Player extends BasicCharacter implements Serializable {
 
     private int experience;
     private int level;

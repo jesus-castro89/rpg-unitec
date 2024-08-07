@@ -11,7 +11,7 @@ public class BarLabel extends JLabel {
 
     public BarLabel(BarType type) {
 
-        setBarValue(100);
+        setBarValue(45);
         setUI(new BarLabelUI(type));
         //Esto permite agregar una fuente con su nombre y la dirección al archivo a la que hace referencia
         FontCache.addFont("Gamer", "fonts/Gamer.ttf");

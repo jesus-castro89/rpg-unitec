@@ -7,10 +7,12 @@ public class ExitButton extends AbstractButton {
     public ExitButton() {
         super("Salir", false);
         setForeground(Color.WHITE);
+        addAction();
     }
 
     @Override
     public void addAction() {
 
+        addActionListener(e -> System.exit(0));
     }
 }
