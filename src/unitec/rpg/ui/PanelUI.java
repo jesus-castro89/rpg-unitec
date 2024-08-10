@@ -23,6 +23,7 @@ public class PanelUI extends BasicPanelUI {
         ImageCache.addImage("centerPanel", "img/panels/mainBackground.png");
         ImageCache.addImage("bottomPanel", "img/panels/battlePanel.png");
         ImageCache.addImage("dialogPanel", "img/panels/skillPanel.png");
+        ImageCache.addImage("startPanel", "img/panels/skillPanel.png");
     }
 
     /**
@@ -56,6 +57,7 @@ public class PanelUI extends BasicPanelUI {
             case "centerPanel" -> ElementsDimension.CENTER_PANEL_SIZE;
             case "bottomPanel" -> ElementsDimension.BOTTOM_PANEL_SIZE;
             case "dialogPanel" -> ElementsDimension.CONTAINER_SIZE;
+            case "startPanel" -> ElementsDimension.START_PANEL_SIZE;
             default -> ElementsDimension.WINDOW_SIZE;
         };
     }
@@ -79,6 +81,7 @@ public class PanelUI extends BasicPanelUI {
             case "centerPanel" -> image = ImageCache.getImage("centerPanel");
             case "bottomPanel" -> image = ImageCache.getImage("bottomPanel");
             case "dialogPanel" -> image = ImageCache.getImage("dialogPanel");
+            case "startPanel" -> image = ImageCache.getImage("startPanel");
             default -> image = ImageCache.getImage("mainPanel");
         }
         g2d.drawImage(image, 0, 0, c.getWidth(), c.getHeight(), null);

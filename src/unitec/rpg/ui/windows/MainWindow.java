@@ -44,8 +44,9 @@ public class MainWindow extends JFrame {
     private JLabel enemyName;
     private JDesktopPane desktopPane;
     private Player player;
+    private int slot;
 
-    public MainWindow() {
+    public MainWindow(Player player, int slot) {
 
         setTitle("RPG Unitec");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -55,6 +56,8 @@ public class MainWindow extends JFrame {
         setLocationRelativeTo(null);
         setResizable(false);
         setVisible(true);
+        this.player = player;
+        this.slot = slot;
     }
 
     private void createDesktop() {
@@ -127,7 +130,7 @@ public class MainWindow extends JFrame {
 
     public void saveGame() {
 
-        FileManager.saveGame(player);
+        FileManager.saveGame(player, slot);
     }
 
     public JDesktopPane getDesktopPane() {

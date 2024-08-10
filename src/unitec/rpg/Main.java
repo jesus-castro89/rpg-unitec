@@ -1,6 +1,7 @@
 package unitec.rpg;
 
 import unitec.rpg.ui.windows.MainWindow;
+import unitec.rpg.ui.windows.StartWindow;
 import unitec.rpg.ui.windows.WelcomeWindow;
 
 /**
@@ -15,6 +16,6 @@ public class Main {
      */
     public static void main(String[] args) {
 
-        new MainWindow();
+        new StartWindow();
     }
 }

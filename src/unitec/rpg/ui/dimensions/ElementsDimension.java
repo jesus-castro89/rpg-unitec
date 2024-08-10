@@ -17,4 +17,5 @@ public interface ElementsDimension {
     Dimension BAR_LABEL = new Dimension(172, 51);
     Dimension PLAYER_LABEL = new Dimension(64, 64);
     Dimension NPC_LABEL = new Dimension(500, 200);
+    Dimension START_PANEL_SIZE = new Dimension(960, 540);
 }
