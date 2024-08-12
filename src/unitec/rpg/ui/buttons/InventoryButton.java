@@ -17,7 +17,6 @@ public class InventoryButton extends AbstractButton {
         ImageCache.addImage("inventoryIdle", "img/icons/inventoryIdle.png");
         setIcon(ImageCache.getImageIcon("inventoryIdle"));
         setRolloverIcon(new ImageIcon("img/icons/inventoryHover.png"));
-        addAction();
     }
 
     @Override

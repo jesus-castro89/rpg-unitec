@@ -42,7 +42,7 @@ public class FireSlime extends SimpleSlime {
     protected String throwFireball(Player player) {
         int damage = (int) ((stats.get(Stats.ATTACK) * 1.50) - player.getStatus(Stats.DEFENSE));
         player.takeDamage(damage);
-        return String.format("%s lanza una bola de fuego a %s por %d puntos de daño.", name, player.getName(), damage);
+        return String.format("%s lanza una bola de fuego a %s por %d puntos de daño.\n", name, player.getName(), damage);
     }
 
     @Override

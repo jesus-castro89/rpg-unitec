@@ -61,24 +61,25 @@ public class SimpleSlime extends Enemy {
     protected String splashAttack(Player player) {
 
         player.takeDamage((int) (getStatus(Stats.ATTACK) * 1.15 - player.getStatus(Stats.DEFENSE)));
-        return String.format("%s ataca a %s con un ataque de salpicadura.", this.getName(), player.getName());
+        return String.format("%s ataca a %s con un ataque de salpicadura.\n", this.getName(), player.getName());
     }
 
     protected String plainAttack(Player player) {
 
         player.takeDamage(getStatus(Stats.ATTACK) - player.getStatus(Stats.DEFENSE));
-        return String.format("%s ataca a %s.", this.getName(), player.getName());
+        return String.format("%s ataca a %s, con %d de daño.\n", this.getName(), player.getName(),
+                getStatus(Stats.ATTACK) - player.getStatus(Stats.DEFENSE));
     }
 
     protected String heal() {
 
         increaseStat(Stats.HP, 2);
-        return String.format("%s se cura.", this.getName());
+        return String.format("%s se cura.\n", this.getName());
     }
 
     protected String run() {
 
         stats.put(Stats.HP, 0);
-        return String.format("%s huye.", this.getName());
+        return String.format("%s huye.\n", this.getName());
     }
 }

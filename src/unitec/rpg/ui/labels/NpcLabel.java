@@ -42,4 +42,8 @@ public class NpcLabel extends ImageLabel {
             g2d.drawImage(imageIcon.getImage(), x, y, newWidth, newHeight, null);
         }
     }
+
+    public void setBoss(boolean isBoss) {
+        this.isBoss = isBoss;
+    }
 }

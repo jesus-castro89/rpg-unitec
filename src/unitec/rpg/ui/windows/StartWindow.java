@@ -7,22 +7,22 @@ import javax.swing.*;
 
 public class StartWindow extends JFrame {
 
-	private final StartPanel startPanel;
+    private final StartPanel startPanel;
 
-	public StartWindow() {
+    public StartWindow() {
 
-		super("Start Window");
-		startPanel=new StartPanel(this);
-		add(startPanel);
-		pack();
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setLocationRelativeTo(null);
-		setResizable(false);
-		setVisible(true);
-	}
+        super("RPG :: Inicio");
+        startPanel = new StartPanel(this);
+        add(startPanel);
+        pack();
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setLocationRelativeTo(null);
+        setResizable(false);
+        setVisible(true);
+    }
 
-	public void update() {
+    public void update() {
 
-		startPanel.update();
-	}
+        startPanel.update();
+    }
 }

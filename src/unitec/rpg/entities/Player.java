@@ -37,7 +37,16 @@ public class Player extends BasicCharacter implements Serializable {
         this("John Doe");
     }
 
-    public void levelUp() {
+    public int getExperienceToNextLevel() {
+        return 100 * this.level;
+    }
+
+    public String tryToFlee() {
+
+        return Math.random() < 0.5 ? "Has huido con éxito.\n" : "No has podido huir.\n";
+    }
+
+    public String levelUp() {
 
         this.level++;
         this.increaseStat(Stats.MAX_HP, 10);
@@ -50,13 +59,18 @@ public class Player extends BasicCharacter implements Serializable {
         this.increaseStat(Stats.EVASION, 1);
         this.increaseStat(Stats.CRITICAL_HIT_CHANCE, 1);
         this.experience = 0;
+        recover();
+        return String.format("\n%s ha subido al nivel %d.", this.name, this.level);
     }
 
-    public void gainExperience(int exp) {
+    public String gainExperience(int exp) {
+
+        String message = String.format("%s gana %d puntos de experiencia.", this.name, exp);
         this.experience += exp;
         if (this.experience >= 100 * this.level) {
-            levelUp();
+            message += levelUp();
         }
+        return message;
     }
 
     public void gainGold(int gold) {

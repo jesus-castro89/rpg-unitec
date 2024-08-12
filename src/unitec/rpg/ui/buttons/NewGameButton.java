@@ -9,14 +9,17 @@ import java.awt.*;
 public class NewGameButton extends AbstractButton {
 
     private int slot;
-    private NewGameWindow newGameWindow;
-    private StartWindow startWindow;
+    private final NewGameWindow newGameWindow;
+    private final StartWindow startWindow;
 
     public NewGameButton(int slot, StartWindow startWindow, NewGameWindow newGameWindow) {
 
         super("Nueva Partida", false);
         this.slot = slot;
+        this.newGameWindow = newGameWindow;
+        this.startWindow = startWindow;
         setForeground(Color.WHITE);
+        addAction();
     }
 
     @Override

@@ -19,4 +19,8 @@ public class ImageLabel extends JLabel {
         g2d.setRenderingHint(RenderingHints.KEY_INTERPOLATION, RenderingHints.VALUE_INTERPOLATION_BICUBIC);
         super.paintComponent(g2d);
     }
+
+    public void setIcon(ImageIcon icon) {
+        super.setIcon(icon);
+    }
 }

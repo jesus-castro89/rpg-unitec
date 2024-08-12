@@ -3,6 +3,7 @@ package unitec.rpg.ui.windows;
 import unitec.rpg.entities.Player;
 import unitec.rpg.entities.enemies.Enemy;
 import unitec.rpg.entities.enemies.EnemyFactory;
+import unitec.rpg.entities.enums.Stats;
 import unitec.rpg.ui.buttons.*;
 import unitec.rpg.ui.cache.FontCache;
 import unitec.rpg.ui.cache.ImageCache;
@@ -44,10 +45,12 @@ public class MainWindow extends JFrame {
     private JLabel enemyName;
     private JDesktopPane desktopPane;
     private Player player;
-    private int slot;
+    private Enemy enemy;
+    private final int slot;
 
     public MainWindow(Player player, int slot) {
 
+        this.player = player;
         setTitle("RPG Unitec");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         createDesktop();
@@ -55,14 +58,48 @@ public class MainWindow extends JFrame {
         pack();
         setLocationRelativeTo(null);
         setResizable(false);
-        setVisible(true);
-        this.player = player;
         this.slot = slot;
     }
 
     private void createDesktop() {
 
         desktopPane = new JDesktopPane();
+        setUIElements();
+        configDialog();
+        setDimensions();
+    }
+
+    private void setDimensions() {
+        // Configuramos los tamaños de los paneles.
+        topPanel.setSize(topPanel.getPreferredSize());
+        centerPanel.setSize(centerPanel.getPreferredSize());
+        bottomPanel.setSize(bottomPanel.getPreferredSize());
+        mainPanel.setBounds(0, 0, desktopPane.getWidth(), desktopPane.getHeight());
+        desktopPane.add(mainPanel, JLayeredPane.DEFAULT_LAYER);
+    }
+
+    private void configDialog() {
+        //Configuramos el cuadro de diálogo.
+        dialogScroll.setOpaque(false);
+        dialogScroll.getViewport().setOpaque(false);
+        dialogScroll.getVerticalScrollBar().setOpaque(false);
+        dialogScroll.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
+        dialogScroll.setHorizontalScrollBar(null);
+        dialogScroll.setBorder(BorderFactory.createEmptyBorder());
+        dialogArea.setOpaque(false);
+        FontCache.addFont("Pixellari", "fonts/Pixellari.ttf");
+        dialogArea.setFont(FontCache.getFont("Pixellari").deriveFont(Font.PLAIN, 16f));
+        dialogArea.setForeground(Color.WHITE);
+        dialogArea.setEditable(false);
+        dialogArea.setLineWrap(true);
+        dialogArea.setWrapStyleWord(true);
+        //Agregamos el texto inicial
+        addText("¡Bienvenido a RPG Unitec!\n");
+        addText("¡Hola, " + player.getName() + "!\n");
+        addText("¡Tu aventura comienza ahora!\n");
+    }
+
+    private void setUIElements() {
         // Esto es lo que se conoce como "look and feel" (L&F) en Java.
         desktopPane.setUI(new DesktopUI());
         desktopPane.setSize(desktopPane.getPreferredSize());
@@ -72,30 +109,10 @@ public class MainWindow extends JFrame {
         centerPanel.setUI(new PanelUI());
         bottomPanel.setUI(new PanelUI());
         dialogPanel.setUI(new PanelUI());
-        //Configuramos el cuadro de diálogo.
-        dialogScroll.setOpaque(false);
-        dialogScroll.getViewport().setOpaque(false);
-        dialogScroll.getVerticalScrollBar().setOpaque(false);
-        dialogScroll.setVerticalScrollBarPolicy(ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
-        dialogScroll.setHorizontalScrollBar(null);
-        dialogScroll.setBorder(BorderFactory.createEmptyBorder());
-        dialogArea.setOpaque(false);
-        dialogArea.setFont(new Font("Arial", Font.PLAIN, 14));
-        dialogArea.setForeground(Color.WHITE);
-        dialogArea.setEditable(false);
-        dialogArea.setLineWrap(true);
-        dialogArea.setWrapStyleWord(true);
-        // Configuramos los tamaños de los paneles.
-        topPanel.setSize(topPanel.getPreferredSize());
-        centerPanel.setSize(centerPanel.getPreferredSize());
-        bottomPanel.setSize(bottomPanel.getPreferredSize());
-        mainPanel.setBounds(0, 0, desktopPane.getWidth(), desktopPane.getHeight());
-        desktopPane.add(mainPanel, JLayeredPane.DEFAULT_LAYER);
     }
 
     private void createUIComponents() {
 
-        player = new Player();
         //Creamos las Etiquetas
         ImageCache.addImage("textLabel", "img/labels/name_label.png");
         FontCache.addFont("Retron", "fonts/Retron2000.ttf");
@@ -105,32 +122,43 @@ public class MainWindow extends JFrame {
         //Etiquetas
         ImageCache.addImage("portrait", "img/player/portrait.png");
         portraitLabel = new ImageLabel(ImageCache.getImageIcon("portrait"));
-        lifeBar = new BarLabel(BarType.LIFE);
-        enemyBar = new BarLabel(BarType.LIFE);
-        magicBar = new BarLabel(BarType.MAGIC);
-        expBar = new BarLabel(BarType.EXPERIENCE);
+        lifeBar = new BarLabel(BarType.LIFE, player.getStatus(Stats.HP), player.getStatus(Stats.MAX_HP));
+        magicBar = new BarLabel(BarType.MAGIC, player.getStatus(Stats.MP), player.getStatus(Stats.MAX_MP));
+        expBar = new BarLabel(BarType.EXPERIENCE, player.getExperience(), player.getExperienceToNextLevel());
         playerLabel = new PlayerLabel();
         goldLabel = new GoldLabel();
+        ((GoldLabel) goldLabel).setGold(player.getGold());
         //Creamos un enemigo
-        Enemy enemy = EnemyFactory.generateRegularEnemy(player);
+        enemy = EnemyFactory.generateRegularEnemy(player);
         enemyName = new ImageLabel(ImageCache.getImageIcon("textLabel"));
         enemyName.setText(enemy != null ? enemy.getName() : null);
-        enemyName.setFont(FontCache.getFont("Retron").deriveFont(Font.BOLD, 14f));
+        enemyName.setFont(FontCache.getFont("Retron").deriveFont(Font.BOLD, 16f));
+        enemyBar = new BarLabel(BarType.LIFE, enemy != null ? enemy.getStatus(Stats.HP) : 0,
+                enemy != null ? enemy.getStatus(Stats.MAX_HP) : 0);
         //Creamos la etiqueta del enemigo
         npcLabel = new NpcLabel(enemy != null ? enemy.getImage() : null, enemy != null && enemy.isBoss());
         //Botones
         inventoryButton = new InventoryButton(this);
         shopButton = new ShopButton();
         blackSmithButton = new BlackSmithButton();
-        attackButton = new AttackButton();
-        fleeButton = new FleeButton();
+        attackButton = new AttackButton(this, enemy, player);
+        fleeButton = new FleeButton(this, enemy, player);
         saveButton = new SaveButton(this);
         exitButton = new ExitButton();
+    }
+
+    public void addText(String text) {
+
+        SwingUtilities.invokeLater(() -> {
+            dialogArea.append(text);
+            dialogArea.setCaretPosition(dialogArea.getDocument().getLength());
+        });
     }
 
     public void saveGame() {
 
         FileManager.saveGame(player, slot);
+        addText("¡Partida guardada!\n");
     }
 
     public JDesktopPane getDesktopPane() {
@@ -139,5 +167,40 @@ public class MainWindow extends JFrame {
 
     public Player getPlayer() {
         return player;
+    }
+
+    public void setEnemy(Enemy enemy) {
+
+        this.enemy = enemy;
+        enemyName.setText(enemy.getName());
+        ((BarLabel) enemyBar).setMaxValue(enemy.getStatus(Stats.MAX_HP));
+        ((BarLabel) enemyBar).setBarValue(enemy.getStatus(Stats.HP));
+        ((ImageLabel) npcLabel).setIcon(enemy.getImage());
+        ((NpcLabel) npcLabel).setBoss(enemy.isBoss());
+        enemyBar.repaint();
+        npcLabel.repaint();
+        enemyName.repaint();
+    }
+
+    public void updateBars() {
+
+        ((BarLabel) lifeBar).setMaxValue(player.getStatus(Stats.MAX_HP));
+        ((BarLabel) lifeBar).setBarValue(player.getStatus(Stats.HP));
+        ((BarLabel) magicBar).setMaxValue(player.getStatus(Stats.MAX_MP));
+        ((BarLabel) magicBar).setBarValue(player.getStatus(Stats.MP));
+        ((BarLabel) expBar).setMaxValue(player.getExperienceToNextLevel());
+        ((BarLabel) expBar).setBarValue(player.getExperience());
+        ((GoldLabel) goldLabel).setGold(player.getGold());
+        lifeBar.repaint();
+        magicBar.repaint();
+        expBar.repaint();
+        enemyName.setText(enemy.getName());
+        ((BarLabel) enemyBar).setMaxValue(enemy.getStatus(Stats.MAX_HP));
+        ((BarLabel) enemyBar).setBarValue(enemy.getStatus(Stats.HP));
+        enemyBar.repaint();
+        enemyName.repaint();
+        goldLabel.repaint();
+        nameLabel.setText(player.getName() + " - Lvl. " + player.getLevel());
+        nameLabel.repaint();
     }
 }

@@ -16,45 +16,44 @@ import java.io.FileNotFoundException;
 
 public class FileListener implements ActionListener {
 
-	private final int slot;
-	private final AbstractButton button;
-	private final StartWindow startWindow;
-	private final NewGameWindow newGameWindow;
+    private final int slot;
+    private final AbstractButton button;
+    private final StartWindow startWindow;
+    private final NewGameWindow newGameWindow;
 
-	public FileListener(AbstractButton button, int slot,
-						StartWindow startWindow, NewGameWindow newGameWindow) {
+    public FileListener(AbstractButton button, int slot, StartWindow startWindow, NewGameWindow newGameWindow) {
 
+        this.slot = slot;
+        this.button = button;
+        this.startWindow = startWindow;
+        this.newGameWindow = newGameWindow;
+    }
 
-		this.slot = slot;
-		this.button = button;
-		this.startWindow = startWindow;
-		this.newGameWindow = newGameWindow;
-	}
+    @Override
+    public void actionPerformed(ActionEvent e) {
 
-	@Override
-	public void actionPerformed(ActionEvent e) {
-
-		// Este método se encarga de gestionar las acciones de los botones de la ventana de inicio
-		switch (button) {
-			case NewGameButton _ -> {
-				startWindow.dispose();
-				// Si el botón es de nueva partida, se abre la ventana de nueva partida
-				newGameWindow.setVisible(true);
-			}
-			case LoadGameButton _ -> {
-				// Si el botón es de cargar partida, se carga la partida del slot correspondiente
-				try {
-					// Se carga la partida y se abre la ventana de juego
-					Player player = FileManager.loadGame(slot);
-					startWindow.dispose();
-					new MainWindow(player, slot);
-				} catch (FileNotFoundException fileNotFoundException) {
-					// Si no se encuentra la partida, se muestra un mensaje de error
-					JOptionPane.showMessageDialog(null, "No hay partida guardada en este slot",
-							"Error", JOptionPane.ERROR_MESSAGE);
-				}
-			}
-			default -> throw new IllegalStateException("Unexpected value: " + button);
-		}
-	}
+        // Este método se encarga de gestionar las acciones de los botones de la ventana de inicio
+        switch (button) {
+            case NewGameButton _ -> {
+                startWindow.dispose();
+                // Si el botón es de nueva partida, se abre la ventana de nueva partida
+                newGameWindow.setVisible(true);
+            }
+            case LoadGameButton _ -> {
+                // Si el botón es de cargar partida, se carga la partida del slot correspondiente
+                try {
+                    // Se carga la partida y se abre la ventana de juego
+                    Player player = FileManager.loadGame(slot);
+                    startWindow.dispose();
+                    MainWindow mainWindow = new MainWindow(player, slot);
+                    mainWindow.setVisible(true);
+                } catch (FileNotFoundException fileNotFoundException) {
+                    // Si no se encuentra la partida, se muestra un mensaje de error
+                    JOptionPane.showMessageDialog(null, "No hay partida guardada en este slot",
+                            "Error", JOptionPane.ERROR_MESSAGE);
+                }
+            }
+            default -> throw new IllegalStateException("Unexpected value: " + button);
+        }
+    }
 }

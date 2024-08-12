@@ -10,8 +10,9 @@ public class FileManager {
     public static Player loadGame(int slot) throws FileNotFoundException {
 
         Player player;
+        String fileName = "files/player_" + slot + ".dat";
         try {
-            player = (Player) new ObjectInputStream(new FileInputStream(new File("file/" + slot + "/.dat"))).readObject();
+            player = (Player) new ObjectInputStream(new FileInputStream(fileName)).readObject();
         } catch (IOException | ClassNotFoundException e) {
             throw new FileNotFoundException("No se encontró el archivo");
         }
@@ -22,7 +23,7 @@ public class FileManager {
 
         ObjectOutputStream oos = null;
         try {
-            oos = new ObjectOutputStream(new FileOutputStream("files/" + slot + ".dat"));
+            oos = new ObjectOutputStream(new FileOutputStream("files/player_" + slot + ".dat"));
             oos.writeObject(player);
             try {
                 oos.close();

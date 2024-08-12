@@ -7,11 +7,12 @@ import javax.swing.*;
 public class BarLabel extends JLabel {
 
     private int barValue;
-    private int maxValue = 100;
+    private int maxValue;
 
-    public BarLabel(BarType type) {
+    public BarLabel(BarType type, int barValue, int maxValue) {
 
-        setBarValue(45);
+        this.maxValue = maxValue;
+        setBarValue(barValue);
         setUI(new BarLabelUI(type));
         //Esto permite agregar una fuente con su nombre y la dirección al archivo a la que hace referencia
         FontCache.addFont("Gamer", "fonts/Gamer.ttf");
@@ -22,7 +23,7 @@ public class BarLabel extends JLabel {
     public void setBarValue(int value) {
 
         this.barValue = value;
-        setText(String.format("%d/%d", value, 100));
+        setText(String.format("%d/%d", value, maxValue));
     }
 
     public int getBarValue() {

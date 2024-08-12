@@ -28,11 +28,13 @@ public abstract class Enemy
     protected void setStats(Player player) {
 
         stats.put(Stats.HP, getAdjustedStat(Stats.HP, player));
+        stats.put(Stats.MAX_HP, getStatus(Stats.HP));
         stats.put(Stats.ATTACK, getAdjustedStat(Stats.ATTACK, player));
         stats.put(Stats.DEFENSE, getAdjustedStat(Stats.DEFENSE, player));
         stats.put(Stats.SPEED, getAdjustedStat(Stats.SPEED, player));
         stats.put(Stats.EVASION, getAdjustedStat(Stats.EVASION, player));
         stats.put(Stats.ACCURACY, getAdjustedStat(Stats.ACCURACY, player));
+        experience = (int) (experience * (player.getLevel() * adjustLevel));
     }
 
     public abstract String attack(Player player);
@@ -44,16 +46,17 @@ public abstract class Enemy
 
     public String dropLoot(Player player) {
 
-        return gainExperience(player) + "\n" + gainGold(player);
+        return gainExperience(player) + "\n" + gainGold(player) + "\n";
     }
 
     public String gainExperience(Player player) {
 
-        return String.format("%s gana %d puntos de experiencia.", player.getName(), this.experience);
+        return player.gainExperience(this.experience);
     }
 
     public String gainGold(Player player) {
 
+        player.gainGold(this.gold);
         return String.format("%s gana %d monedas de oro.", player.getName(), this.gold);
     }
 

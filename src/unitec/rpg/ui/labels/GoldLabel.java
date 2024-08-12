@@ -10,9 +10,11 @@ import java.io.IOException;
 
 public class GoldLabel extends ImageLabel {
 
+    private int gold = 0;
+
     public GoldLabel() {
         super(new ImageIcon("img/labels/goldLabel.png"));
-        setText(0 + " G");
+        setText(gold + " G");
         setIconTextGap(55);
         setVerticalTextPosition(SwingConstants.CENTER);
         setHorizontalTextPosition(SwingConstants.CENTER);
@@ -40,8 +42,13 @@ public class GoldLabel extends ImageLabel {
         g2d.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
         g2d.setRenderingHint(RenderingHints.KEY_RENDERING, RenderingHints.VALUE_RENDER_QUALITY);
         g2d.setRenderingHint(RenderingHints.KEY_INTERPOLATION, RenderingHints.VALUE_INTERPOLATION_BICUBIC);
-        g2d.drawImage(((ImageIcon) getIcon()).getImage(), 0,0,
+        g2d.drawImage(((ImageIcon) getIcon()).getImage(), 0, 0,
                 getPreferredSize().width, getPreferredSize().height, null);
         g2d.drawString(getText(), textX, textY);
+    }
+
+    public void setGold(int gold) {
+        this.gold = gold;
+        setText(gold + " G");
     }
 }

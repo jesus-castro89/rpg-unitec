@@ -65,19 +65,20 @@ public class RookieGoblin extends Enemy {
 
         int damage = stats.get(Stats.ATTACK) - player.getStatus(Stats.DEFENSE);
         player.takeDamage(damage);
-        return String.format("%s ataca a %s por %d puntos de daño.", name, player.getName(), damage);
+        return String.format("%s ataca a %s por %d puntos de daño.\n", name, player.getName(), damage);
     }
 
     protected String throwRock(Player player) {
 
         int damage = (int) ((stats.get(Stats.ATTACK) * 1.15) - player.getStatus(Stats.DEFENSE));
         player.takeDamage(damage);
-        return String.format("%s lanza una roca a %s por %d puntos de daño.", name, player.getName(), damage);
+        return String.format("%s lanza una roca a %s por %d puntos de daño.\n", name, player.getName(), damage);
     }
 
     protected String flee(Player player) {
 
-        return String.format("%s huye.", name);
+        stats.put(Stats.HP, 0);
+        return String.format("%s huye.\n", name);
     }
 
     protected String stealGold(Player player) {
@@ -85,8 +86,8 @@ public class RookieGoblin extends Enemy {
         int goldStolen = Math.max((player.getGold() - 5), 0);
         player.setGold(player.getGold() - goldStolen);
         gold += goldStolen;
-        return goldStolen == 0 ? String.format("%s intenta robar a %s, pero no tiene oro.", name, player.getName()) :
-                String.format("%s roba %d monedas de oro a %s.", name, goldStolen, player.getName());
+        return goldStolen == 0 ? String.format("%s intenta robar a %s, pero no tiene oro.\n", name, player.getName()) :
+                String.format("%s roba %d monedas de oro a %s.\n", name, goldStolen, player.getName());
     }
 
     /**

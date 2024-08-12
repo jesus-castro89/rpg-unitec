@@ -31,11 +31,10 @@ public class BarLabelUI extends BasicLabelUI {
 
         int value = getBarValue(c);
         int max = getMaxBarValue(c);
-        if (value > max) {
+        if (value >= max) {
             value = max;
-        }
-        if (value>0 && value <= 25) {
-            value = 18;
+        } else if (value > 0 && value <= 25) {
+            value = (int) (max * .18);
         }
         return (int) (value * 1.0 / max * 130);
     }
