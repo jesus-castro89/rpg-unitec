@@ -29,6 +29,7 @@
   <td id="projectalign">
    <div id="projectname">My Project
    </div>
+   <div id="projectbrief">Miembro 1, Miembro 2, Miembro 3</div>
   </td>
  </tr>
  </tbody>
@@ -101,32 +102,53 @@ $(function(){initNavTree('_inventory_button_8java_source.html',''); initResizabl
 <div class="contents">
 <a href="_inventory_button_8java.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="keyword">package </span>unitec.rpg.ui.buttons;</div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> </div>
-<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="keyword">import</span> javax.swing.*;</div>
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span> </div>
-<div class="foldopen" id="foldopen00005" data-start="{" data-end="};">
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno"><a class="line" href="classunitec_1_1rpg_1_1ui_1_1buttons_1_1_inventory_button.html">    5</a></span><span class="keyword">public</span> <span class="keyword">class </span><a class="code hl_class" href="classunitec_1_1rpg_1_1ui_1_1buttons_1_1_inventory_button.html">InventoryButton</a> <span class="keyword">extends</span> <a class="code hl_class" href="classunitec_1_1rpg_1_1ui_1_1buttons_1_1_abstract_button.html">AbstractButton</a> {</div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="keyword">import</span> unitec.rpg.ui.cache.ImageCache;</div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="keyword">import</span> unitec.rpg.ui.windows.Inventory;</div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="keyword">import</span> unitec.rpg.ui.windows.MainWindow;</div>
 <div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span> </div>
-<div class="foldopen" id="foldopen00007" data-start="{" data-end="}">
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno"><a class="line" href="classunitec_1_1rpg_1_1ui_1_1buttons_1_1_inventory_button.html#a935bd616b820b83db330da9b8b090479">    7</a></span>    <span class="keyword">public</span> <a class="code hl_function" href="classunitec_1_1rpg_1_1ui_1_1buttons_1_1_inventory_button.html#a935bd616b820b83db330da9b8b090479">InventoryButton</a>() {</div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="keyword">import</span> javax.swing.*;</div>
 <div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>        super(<span class="stringliteral">&quot;Inventario&quot;</span>, <span class="keyword">true</span>);</div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>        setIcon(<span class="keyword">new</span> ImageIcon(<span class="stringliteral">&quot;img/icons/inventoryIdle.png&quot;</span>));</div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>        setRolloverIcon(<span class="keyword">new</span> ImageIcon(<span class="stringliteral">&quot;img/icons/inventoryHover.png&quot;</span>));</div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>    }</div>
+<div class="foldopen" id="foldopen00009" data-start="{" data-end="};">
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno"><a class="line" href="classunitec_1_1rpg_1_1ui_1_1buttons_1_1_inventory_button.html">    9</a></span><span class="keyword">public</span> <span class="keyword">class </span><a class="code hl_class" href="classunitec_1_1rpg_1_1ui_1_1buttons_1_1_inventory_button.html">InventoryButton</a> <span class="keyword">extends</span> <a class="code hl_class" href="classunitec_1_1rpg_1_1ui_1_1buttons_1_1_abstract_button.html">AbstractButton</a> {</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span> </div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>    <span class="keyword">private</span> <a class="code hl_class" href="classunitec_1_1rpg_1_1ui_1_1windows_1_1_main_window.html">MainWindow</a> mainWindow;</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
+<div class="foldopen" id="foldopen00013" data-start="{" data-end="}">
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno"><a class="line" href="classunitec_1_1rpg_1_1ui_1_1buttons_1_1_inventory_button.html#ab7992d8ea9cfc3a3ba77180ef79f2423">   13</a></span>    <span class="keyword">public</span> <a class="code hl_function" href="classunitec_1_1rpg_1_1ui_1_1buttons_1_1_inventory_button.html#ab7992d8ea9cfc3a3ba77180ef79f2423">InventoryButton</a>(<a class="code hl_class" href="classunitec_1_1rpg_1_1ui_1_1windows_1_1_main_window.html">MainWindow</a> mainWindow) {</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>        super(<span class="stringliteral">&quot;Inventario&quot;</span>, <span class="keyword">true</span>);</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>        this.mainWindow = mainWindow;</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>        <a class="code hl_class" href="classunitec_1_1rpg_1_1ui_1_1cache_1_1_image_cache.html">ImageCache</a>.<a class="code hl_function" href="classunitec_1_1rpg_1_1ui_1_1cache_1_1_image_cache.html#a21a1c7c595185456e2f3c6af4a945cc3">addImage</a>(<span class="stringliteral">&quot;inventoryIdle&quot;</span>, <span class="stringliteral">&quot;img/icons/inventoryIdle.png&quot;</span>);</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>        setIcon(<a class="code hl_class" href="classunitec_1_1rpg_1_1ui_1_1cache_1_1_image_cache.html">ImageCache</a>.<a class="code hl_function" href="classunitec_1_1rpg_1_1ui_1_1cache_1_1_image_cache.html#af7e38a82b03a7d1ee41f03815fb0e170">getImageIcon</a>(<span class="stringliteral">&quot;inventoryIdle&quot;</span>));</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>        setRolloverIcon(<span class="keyword">new</span> ImageIcon(<span class="stringliteral">&quot;img/icons/inventoryHover.png&quot;</span>));</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    }</div>
 </div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span> </div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>    @Override</div>
-<div class="foldopen" id="foldopen00015" data-start="{" data-end="}">
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno"><a class="line" href="classunitec_1_1rpg_1_1ui_1_1buttons_1_1_inventory_button.html#a7d6655cc854254cc0ce8b32edb14c2e4">   15</a></span>    <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classunitec_1_1rpg_1_1ui_1_1buttons_1_1_inventory_button.html#a7d6655cc854254cc0ce8b32edb14c2e4">addAction</a>() {</div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> </div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    }</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    @Override</div>
+<div class="foldopen" id="foldopen00023" data-start="{" data-end="}">
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno"><a class="line" href="classunitec_1_1rpg_1_1ui_1_1buttons_1_1_inventory_button.html#a7d6655cc854254cc0ce8b32edb14c2e4">   23</a></span>    <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classunitec_1_1rpg_1_1ui_1_1buttons_1_1_inventory_button.html#a7d6655cc854254cc0ce8b32edb14c2e4">addAction</a>() {</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>        addActionListener(e -&gt; {</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>            JInternalFrame inventory = <span class="keyword">new</span> JInternalFrame(<span class="stringliteral">&quot;Inventario&quot;</span>, <span class="keyword">true</span>, <span class="keyword">true</span>, <span class="keyword">true</span>, <span class="keyword">true</span>);</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>            inventory.setContentPane(<span class="keyword">new</span> <a class="code hl_class" href="classunitec_1_1rpg_1_1ui_1_1windows_1_1_inventory.html">Inventory</a>());</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>            inventory.setSize(400, 200);</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>            inventory.setLocation(50, 50);</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>            inventory.setVisible(<span class="keyword">true</span>);</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>            mainWindow.<a class="code hl_function" href="classunitec_1_1rpg_1_1ui_1_1windows_1_1_main_window.html#a280d67b279e9b80782d6fb15b2cc4562">getDesktopPane</a>().add(inventory, JLayeredPane.PALETTE_LAYER);</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>        });</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    }</div>
 </div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>}</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>}</div>
 </div>
 <div class="ttc" id="aclassunitec_1_1rpg_1_1ui_1_1buttons_1_1_abstract_button_html"><div class="ttname"><a href="classunitec_1_1rpg_1_1ui_1_1buttons_1_1_abstract_button.html">unitec.rpg.ui.buttons.AbstractButton</a></div><div class="ttdef"><b>Definition</b> <a href="_abstract_button_8java_source.html#l00008">AbstractButton.java:8</a></div></div>
-<div class="ttc" id="aclassunitec_1_1rpg_1_1ui_1_1buttons_1_1_inventory_button_html"><div class="ttname"><a href="classunitec_1_1rpg_1_1ui_1_1buttons_1_1_inventory_button.html">unitec.rpg.ui.buttons.InventoryButton</a></div><div class="ttdef"><b>Definition</b> <a href="#l00005">InventoryButton.java:5</a></div></div>
-<div class="ttc" id="aclassunitec_1_1rpg_1_1ui_1_1buttons_1_1_inventory_button_html_a7d6655cc854254cc0ce8b32edb14c2e4"><div class="ttname"><a href="classunitec_1_1rpg_1_1ui_1_1buttons_1_1_inventory_button.html#a7d6655cc854254cc0ce8b32edb14c2e4">unitec.rpg.ui.buttons.InventoryButton.addAction</a></div><div class="ttdeci">void addAction()</div><div class="ttdef"><b>Definition</b> <a href="#l00015">InventoryButton.java:15</a></div></div>
-<div class="ttc" id="aclassunitec_1_1rpg_1_1ui_1_1buttons_1_1_inventory_button_html_a935bd616b820b83db330da9b8b090479"><div class="ttname"><a href="classunitec_1_1rpg_1_1ui_1_1buttons_1_1_inventory_button.html#a935bd616b820b83db330da9b8b090479">unitec.rpg.ui.buttons.InventoryButton.InventoryButton</a></div><div class="ttdeci">InventoryButton()</div><div class="ttdef"><b>Definition</b> <a href="#l00007">InventoryButton.java:7</a></div></div>
+<div class="ttc" id="aclassunitec_1_1rpg_1_1ui_1_1buttons_1_1_inventory_button_html"><div class="ttname"><a href="classunitec_1_1rpg_1_1ui_1_1buttons_1_1_inventory_button.html">unitec.rpg.ui.buttons.InventoryButton</a></div><div class="ttdef"><b>Definition</b> <a href="#l00009">InventoryButton.java:9</a></div></div>
+<div class="ttc" id="aclassunitec_1_1rpg_1_1ui_1_1buttons_1_1_inventory_button_html_a7d6655cc854254cc0ce8b32edb14c2e4"><div class="ttname"><a href="classunitec_1_1rpg_1_1ui_1_1buttons_1_1_inventory_button.html#a7d6655cc854254cc0ce8b32edb14c2e4">unitec.rpg.ui.buttons.InventoryButton.addAction</a></div><div class="ttdeci">void addAction()</div><div class="ttdef"><b>Definition</b> <a href="#l00023">InventoryButton.java:23</a></div></div>
+<div class="ttc" id="aclassunitec_1_1rpg_1_1ui_1_1buttons_1_1_inventory_button_html_ab7992d8ea9cfc3a3ba77180ef79f2423"><div class="ttname"><a href="classunitec_1_1rpg_1_1ui_1_1buttons_1_1_inventory_button.html#ab7992d8ea9cfc3a3ba77180ef79f2423">unitec.rpg.ui.buttons.InventoryButton.InventoryButton</a></div><div class="ttdeci">InventoryButton(MainWindow mainWindow)</div><div class="ttdef"><b>Definition</b> <a href="#l00013">InventoryButton.java:13</a></div></div>
+<div class="ttc" id="aclassunitec_1_1rpg_1_1ui_1_1cache_1_1_image_cache_html"><div class="ttname"><a href="classunitec_1_1rpg_1_1ui_1_1cache_1_1_image_cache.html">unitec.rpg.ui.cache.ImageCache</a></div><div class="ttdef"><b>Definition</b> <a href="_image_cache_8java_source.html#l00011">ImageCache.java:11</a></div></div>
+<div class="ttc" id="aclassunitec_1_1rpg_1_1ui_1_1cache_1_1_image_cache_html_a21a1c7c595185456e2f3c6af4a945cc3"><div class="ttname"><a href="classunitec_1_1rpg_1_1ui_1_1cache_1_1_image_cache.html#a21a1c7c595185456e2f3c6af4a945cc3">unitec.rpg.ui.cache.ImageCache.addImage</a></div><div class="ttdeci">static BufferedImage addImage(String imageName, String imagePath)</div><div class="ttdef"><b>Definition</b> <a href="_image_cache_8java_source.html#l00024">ImageCache.java:24</a></div></div>
+<div class="ttc" id="aclassunitec_1_1rpg_1_1ui_1_1cache_1_1_image_cache_html_af7e38a82b03a7d1ee41f03815fb0e170"><div class="ttname"><a href="classunitec_1_1rpg_1_1ui_1_1cache_1_1_image_cache.html#af7e38a82b03a7d1ee41f03815fb0e170">unitec.rpg.ui.cache.ImageCache.getImageIcon</a></div><div class="ttdeci">static ImageIcon getImageIcon(String imageName)</div><div class="ttdef"><b>Definition</b> <a href="_image_cache_8java_source.html#l00054">ImageCache.java:54</a></div></div>
+<div class="ttc" id="aclassunitec_1_1rpg_1_1ui_1_1windows_1_1_inventory_html"><div class="ttname"><a href="classunitec_1_1rpg_1_1ui_1_1windows_1_1_inventory.html">unitec.rpg.ui.windows.Inventory</a></div><div class="ttdef"><b>Definition</b> <a href="ui_2windows_2_inventory_8java_source.html#l00006">Inventory.java:6</a></div></div>
+<div class="ttc" id="aclassunitec_1_1rpg_1_1ui_1_1windows_1_1_main_window_html"><div class="ttname"><a href="classunitec_1_1rpg_1_1ui_1_1windows_1_1_main_window.html">unitec.rpg.ui.windows.MainWindow</a></div><div class="ttdef"><b>Definition</b> <a href="_main_window_8java_source.html#l00020">MainWindow.java:20</a></div></div>
+<div class="ttc" id="aclassunitec_1_1rpg_1_1ui_1_1windows_1_1_main_window_html_a280d67b279e9b80782d6fb15b2cc4562"><div class="ttname"><a href="classunitec_1_1rpg_1_1ui_1_1windows_1_1_main_window.html#a280d67b279e9b80782d6fb15b2cc4562">unitec.rpg.ui.windows.MainWindow.getDesktopPane</a></div><div class="ttdeci">JDesktopPane getDesktopPane()</div><div class="ttdef"><b>Definition</b> <a href="_main_window_8java_source.html#l00164">MainWindow.java:164</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

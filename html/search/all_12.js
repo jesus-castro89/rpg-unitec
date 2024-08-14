@@ -5,5 +5,7 @@ var searchData=
   ['weapon_2',['WEAPON',['../enumunitec_1_1rpg_1_1items_1_1_item_type.html#abb893bac7c2f4d913fda8a52abe64f3c',1,'unitec::rpg::items::ItemType']]],
   ['welcomewindow_3',['WelcomeWindow',['../classunitec_1_1rpg_1_1ui_1_1windows_1_1_welcome_window.html',1,'unitec.rpg.ui.windows.WelcomeWindow'],['../classunitec_1_1rpg_1_1ui_1_1windows_1_1_welcome_window.html#ad101c5693e7a347dcbf440215857df1e',1,'unitec.rpg.ui.windows.WelcomeWindow.WelcomeWindow()']]],
   ['welcomewindow_2ejava_4',['WelcomeWindow.java',['../_welcome_window_8java.html',1,'']]],
-  ['window_5fsize_5',['WINDOW_SIZE',['../interfaceunitec_1_1rpg_1_1ui_1_1dimensions_1_1_elements_dimension.html#a7de7e2d1c49470277ef4a101c9177aa3',1,'unitec::rpg::ui::dimensions::ElementsDimension']]]
+  ['window_5fsize_5',['WINDOW_SIZE',['../interfaceunitec_1_1rpg_1_1ui_1_1dimensions_1_1_elements_dimension.html#a7de7e2d1c49470277ef4a101c9177aa3',1,'unitec::rpg::ui::dimensions::ElementsDimension']]],
+  ['woodensword_6',['WoodenSword',['../classunitec_1_1rpg_1_1items_1_1weapons_1_1swords_1_1_wooden_sword.html',1,'unitec.rpg.items.weapons.swords.WoodenSword'],['../classunitec_1_1rpg_1_1items_1_1weapons_1_1swords_1_1_wooden_sword.html#a706885979586300d87d0c1d3f6dfc3f3',1,'unitec.rpg.items.weapons.swords.WoodenSword.WoodenSword()']]],
+  ['woodensword_2ejava_7',['WoodenSword.java',['../_wooden_sword_8java.html',1,'']]]
 ];

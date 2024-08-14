@@ -29,6 +29,7 @@
   <td id="projectalign">
    <div id="projectname">My Project
    </div>
+   <div id="projectbrief">Miembro 1, Miembro 2, Miembro 3</div>
   </td>
  </tr>
  </tbody>
@@ -101,69 +102,109 @@ $(function(){initNavTree('_bar_label_u_i_8java_source.html',''); initResizable(t
 <div class="contents">
 <a href="_bar_label_u_i_8java.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="keyword">package </span>unitec.rpg.ui.labels;</div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> </div>
-<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="keyword">import</span> unitec.rpg.ui.dimensions.ElementsDimension;</div>
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span> </div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="keyword">import</span> javax.swing.*;</div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="keyword">import</span> javax.swing.plaf.basic.BasicLabelUI;</div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="keyword">import</span> java.awt.*;</div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
-<div class="foldopen" id="foldopen00009" data-start="{" data-end="};">
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno"><a class="line" href="classunitec_1_1rpg_1_1ui_1_1labels_1_1_bar_label_u_i.html">    9</a></span><span class="keyword">public</span> <span class="keyword">class </span><a class="code hl_class" href="classunitec_1_1rpg_1_1ui_1_1labels_1_1_bar_label_u_i.html">BarLabelUI</a> <span class="keyword">extends</span> BasicLabelUI {</div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="keyword">import</span> unitec.rpg.ui.cache.FontCache;</div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="keyword">import</span> unitec.rpg.ui.dimensions.ElementsDimension;</div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span> </div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="keyword">import</span> javax.swing.*;</div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="keyword">import</span> javax.swing.border.LineBorder;</div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="keyword">import</span> javax.swing.plaf.basic.BasicLabelUI;</div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="keyword">import</span> java.awt.*;</div>
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span> </div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>    @Override</div>
-<div class="foldopen" id="foldopen00012" data-start="{" data-end="}">
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno"><a class="line" href="classunitec_1_1rpg_1_1ui_1_1labels_1_1_bar_label_u_i.html#a3b46d8e8f79dbd5e755e1003787be279">   12</a></span>    <span class="keyword">protected</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classunitec_1_1rpg_1_1ui_1_1labels_1_1_bar_label_u_i.html#a3b46d8e8f79dbd5e755e1003787be279">installDefaults</a>(JLabel c) {</div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span> </div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>        c.setOpaque(<span class="keyword">false</span>);</div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>        c.setForeground(Color.WHITE);</div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>        c.setVerticalTextPosition(SwingConstants.BOTTOM);</div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>        c.setHorizontalTextPosition(SwingConstants.RIGHT);</div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>        c.setIconTextGap(30);</div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    }</div>
+<div class="foldopen" id="foldopen00011" data-start="{" data-end="};">
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno"><a class="line" href="classunitec_1_1rpg_1_1ui_1_1labels_1_1_bar_label_u_i.html">   11</a></span><span class="keyword">public</span> <span class="keyword">class </span><a class="code hl_class" href="classunitec_1_1rpg_1_1ui_1_1labels_1_1_bar_label_u_i.html">BarLabelUI</a> <span class="keyword">extends</span> BasicLabelUI {</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>    <span class="keyword">private</span> <a class="code hl_class" href="enumunitec_1_1rpg_1_1ui_1_1labels_1_1_bar_type.html">BarType</a> type;</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
+<div class="foldopen" id="foldopen00015" data-start="{" data-end="}">
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno"><a class="line" href="classunitec_1_1rpg_1_1ui_1_1labels_1_1_bar_label_u_i.html#a5871e085bd6c0840b1c7285ea8d0c7cc">   15</a></span>    <span class="keyword">public</span> <a class="code hl_function" href="classunitec_1_1rpg_1_1ui_1_1labels_1_1_bar_label_u_i.html#a5871e085bd6c0840b1c7285ea8d0c7cc">BarLabelUI</a>(<a class="code hl_class" href="enumunitec_1_1rpg_1_1ui_1_1labels_1_1_bar_type.html">BarType</a> type) {</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> </div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>        this.type = type;</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>        <span class="comment">//Esto permite agregar una fuente con su nombre y la dirección al archivo a la que hace referencia</span></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>        <a class="code hl_class" href="classunitec_1_1rpg_1_1ui_1_1cache_1_1_font_cache.html">FontCache</a>.<a class="code hl_function" href="classunitec_1_1rpg_1_1ui_1_1cache_1_1_font_cache.html#a62babed054e59385f1520ac11ff019b2">addFont</a>(<span class="stringliteral">&quot;Gamer&quot;</span>, <span class="stringliteral">&quot;fonts/Gamer.ttf&quot;</span>);</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    }</div>
 </div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span> </div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    @Override</div>
-<div class="foldopen" id="foldopen00022" data-start="{" data-end="}">
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno"><a class="line" href="classunitec_1_1rpg_1_1ui_1_1labels_1_1_bar_label_u_i.html#a9b3fdd7d909907ebeb78685eca7188fc">   22</a></span>    <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classunitec_1_1rpg_1_1ui_1_1labels_1_1_bar_label_u_i.html#a9b3fdd7d909907ebeb78685eca7188fc">paint</a>(Graphics g, JComponent c) {</div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span> </div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>        Graphics2D g2d = (Graphics2D) g;</div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>        <span class="keywordtype">int</span> textX = (<a class="code hl_function" href="classunitec_1_1rpg_1_1ui_1_1labels_1_1_bar_label_u_i.html#ae4e412e3849ec2cf8b6e245b6948656c">getPreferredSize</a>(c).width - c.getFontMetrics(c.getFont()).stringWidth(((JLabel) c).getText())) / 2;</div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>        <span class="keywordtype">int</span> textY = <a class="code hl_function" href="classunitec_1_1rpg_1_1ui_1_1labels_1_1_bar_label_u_i.html#ae4e412e3849ec2cf8b6e245b6948656c">getPreferredSize</a>(c).height - c.getFontMetrics(c.getFont()).getHeight() / 2;</div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>        g2d.setRenderingHint(RenderingHints.KEY_TEXT_ANTIALIASING, RenderingHints.VALUE_TEXT_ANTIALIAS_LCD_HRGB);</div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>        g2d.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);</div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>        g2d.setRenderingHint(RenderingHints.KEY_RENDERING, RenderingHints.VALUE_RENDER_QUALITY);</div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>        g2d.setRenderingHint(RenderingHints.KEY_INTERPOLATION, RenderingHints.VALUE_INTERPOLATION_BICUBIC);</div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>        g2d.drawImage(((ImageIcon) ((JLabel) c).getIcon()).getImage(), 0, 0,</div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>                <a class="code hl_function" href="classunitec_1_1rpg_1_1ui_1_1labels_1_1_bar_label_u_i.html#ae4e412e3849ec2cf8b6e245b6948656c">getPreferredSize</a>(c).width, <a class="code hl_function" href="classunitec_1_1rpg_1_1ui_1_1labels_1_1_bar_label_u_i.html#ae4e412e3849ec2cf8b6e245b6948656c">getPreferredSize</a>(c).height, <span class="keyword">null</span>);</div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>        <a class="code hl_function" href="classunitec_1_1rpg_1_1ui_1_1labels_1_1_bar_label_u_i.html#a4ee9b48597336b8dc6f9bb2244d409d3">paintEnabledText</a>((JLabel) c, g, ((JLabel) c).getText(), textX, textY);</div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    }</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    <span class="keyword">private</span> <span class="keywordtype">int</span> getBarValue(JLabel c) {</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>        <span class="keywordflow">return</span> ((<a class="code hl_class" href="classunitec_1_1rpg_1_1ui_1_1labels_1_1_bar_label.html">BarLabel</a>) c).getBarValue();</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    }</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span> </div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    <span class="keyword">private</span> <span class="keywordtype">int</span> getMaxBarValue(JLabel c) {</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>        <span class="keywordflow">return</span> ((BarLabel) c).getMaxValue();</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    }</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span> </div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>    <span class="keyword">private</span> <span class="keywordtype">int</span> getBarWidth(JLabel c) {</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span> </div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>        <span class="keywordtype">int</span> value = getBarValue(c);</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>        <span class="keywordtype">int</span> max = getMaxBarValue(c);</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>        <span class="keywordflow">if</span> (value &gt;= max) {</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>            value = max;</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>        } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (value &gt; 0 &amp;&amp; value &lt;= 25) {</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>            value = (int) (max * .18);</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>        }</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>        <span class="keywordflow">return</span> (<span class="keywordtype">int</span>) (value * 1.0 / max * 130);</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    }</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span> </div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>    @Override</div>
+<div class="foldopen" id="foldopen00043" data-start="{" data-end="}">
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno"><a class="line" href="classunitec_1_1rpg_1_1ui_1_1labels_1_1_bar_label_u_i.html#a3b46d8e8f79dbd5e755e1003787be279">   43</a></span>    <span class="keyword">protected</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classunitec_1_1rpg_1_1ui_1_1labels_1_1_bar_label_u_i.html#a3b46d8e8f79dbd5e755e1003787be279">installDefaults</a>(JLabel c) {</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span> </div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>        c.setForeground(<span class="keyword">new</span> Color(241, 229, 227));</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>        c.setIconTextGap(30);</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>    }</div>
 </div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span> </div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    @Override</div>
-<div class="foldopen" id="foldopen00037" data-start="{" data-end="}">
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno"><a class="line" href="classunitec_1_1rpg_1_1ui_1_1labels_1_1_bar_label_u_i.html#a4ee9b48597336b8dc6f9bb2244d409d3">   37</a></span>    <span class="keyword">protected</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classunitec_1_1rpg_1_1ui_1_1labels_1_1_bar_label_u_i.html#a4ee9b48597336b8dc6f9bb2244d409d3">paintEnabledText</a>(JLabel l, Graphics g, String s, <span class="keywordtype">int</span> textX, <span class="keywordtype">int</span> textY) {</div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span> </div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>        textX = l.getIconTextGap() +</div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>                ((ElementsDimension.BAR_LABEL.width - l.getFontMetrics(l.getFont()).stringWidth(s)) / 2);</div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>        textY = (ElementsDimension.BAR_LABEL.height - l.getFontMetrics(l.getFont()).getHeight() / 2)</div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>                + 5;</div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>        super.paintEnabledText(l, g, s, textX, textY);</div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    }</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span> </div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>    @Override</div>
+<div class="foldopen" id="foldopen00050" data-start="{" data-end="}">
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno"><a class="line" href="classunitec_1_1rpg_1_1ui_1_1labels_1_1_bar_label_u_i.html#a9b3fdd7d909907ebeb78685eca7188fc">   50</a></span>    <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classunitec_1_1rpg_1_1ui_1_1labels_1_1_bar_label_u_i.html#a9b3fdd7d909907ebeb78685eca7188fc">paint</a>(Graphics g, JComponent c) {</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span> </div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>        Graphics2D g2d = (Graphics2D) g;</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>        <span class="keywordtype">int</span> textX = (<a class="code hl_function" href="classunitec_1_1rpg_1_1ui_1_1labels_1_1_bar_label_u_i.html#ae4e412e3849ec2cf8b6e245b6948656c">getPreferredSize</a>(c).width - c.getFontMetrics(c.getFont()).stringWidth(((JLabel) c).getText())) / 2;</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>        <span class="keywordtype">int</span> textY = <a class="code hl_function" href="classunitec_1_1rpg_1_1ui_1_1labels_1_1_bar_label_u_i.html#ae4e412e3849ec2cf8b6e245b6948656c">getPreferredSize</a>(c).height - c.getFontMetrics(c.getFont()).getHeight() / 2;</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>        g2d.setRenderingHint(RenderingHints.KEY_TEXT_ANTIALIASING, RenderingHints.VALUE_TEXT_ANTIALIAS_LCD_HRGB);</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>        g2d.setRenderingHint(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>        g2d.setRenderingHint(RenderingHints.KEY_RENDERING, RenderingHints.VALUE_RENDER_QUALITY);</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>        g2d.setRenderingHint(RenderingHints.KEY_INTERPOLATION, RenderingHints.VALUE_INTERPOLATION_BICUBIC);</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>        g2d.drawImage(type.<a class="code hl_function" href="enumunitec_1_1rpg_1_1ui_1_1labels_1_1_bar_type.html#a4a9c86b28be9f898b79d1109f9d8d799">getContainer</a>().getImage(), c.getWidth() - 150, 1, 150, 50, <span class="keyword">null</span>);</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>        g2d.drawImage(type.<a class="code hl_function" href="enumunitec_1_1rpg_1_1ui_1_1labels_1_1_bar_type.html#a3f997a3600ad34a118b164c163792389">getBar</a>().getImage(), 32, 10, getBarWidth((JLabel) c), 14, <span class="keyword">null</span>);</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>        g2d.drawImage(type.<a class="code hl_function" href="enumunitec_1_1rpg_1_1ui_1_1labels_1_1_bar_type.html#a05151d8e086ac7dbc4f9aabd5e528b16">getIcon</a>().getImage(), 0, 0, 51, 51, <span class="keyword">null</span>);</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>        g2d.setColor(Color.BLACK);</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>        <a class="code hl_function" href="classunitec_1_1rpg_1_1ui_1_1labels_1_1_bar_label_u_i.html#a4ee9b48597336b8dc6f9bb2244d409d3">paintEnabledText</a>((JLabel) c, g, ((JLabel) c).getText(), textX, textY);</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>    }</div>
 </div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span> </div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>    @Override</div>
-<div class="foldopen" id="foldopen00047" data-start="{" data-end="}">
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno"><a class="line" href="classunitec_1_1rpg_1_1ui_1_1labels_1_1_bar_label_u_i.html#ae4e412e3849ec2cf8b6e245b6948656c">   47</a></span>    <span class="keyword">public</span> Dimension <a class="code hl_function" href="classunitec_1_1rpg_1_1ui_1_1labels_1_1_bar_label_u_i.html#ae4e412e3849ec2cf8b6e245b6948656c">getPreferredSize</a>(JComponent c) {</div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>        <span class="keywordflow">return</span> <a class="code hl_interface" href="interfaceunitec_1_1rpg_1_1ui_1_1dimensions_1_1_elements_dimension.html">ElementsDimension</a>.<a class="code hl_variable" href="interfaceunitec_1_1rpg_1_1ui_1_1dimensions_1_1_elements_dimension.html#a438a31d808ba75fa9e57462aaed7f7d0">BAR_LABEL</a>;</div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>    }</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span> </div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>    @Override</div>
+<div class="foldopen" id="foldopen00067" data-start="{" data-end="}">
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno"><a class="line" href="classunitec_1_1rpg_1_1ui_1_1labels_1_1_bar_label_u_i.html#a4ee9b48597336b8dc6f9bb2244d409d3">   67</a></span>    <span class="keyword">protected</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classunitec_1_1rpg_1_1ui_1_1labels_1_1_bar_label_u_i.html#a4ee9b48597336b8dc6f9bb2244d409d3">paintEnabledText</a>(JLabel l, Graphics g, String s, <span class="keywordtype">int</span> textX, <span class="keywordtype">int</span> textY) {</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span> </div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>        textX = l.getIconTextGap() +</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>                ((ElementsDimension.BAR_LABEL.width - l.getFontMetrics(l.getFont()).stringWidth(s)) / 2);</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>        textY = (ElementsDimension.BAR_LABEL.height - l.getFontMetrics(l.getFont()).getHeight() / 2)</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>                + 5;</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>        super.paintEnabledText(l, g, s, textX, textY);</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>    }</div>
 </div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>}</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span> </div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>    @Override</div>
+<div class="foldopen" id="foldopen00077" data-start="{" data-end="}">
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno"><a class="line" href="classunitec_1_1rpg_1_1ui_1_1labels_1_1_bar_label_u_i.html#ae4e412e3849ec2cf8b6e245b6948656c">   77</a></span>    <span class="keyword">public</span> Dimension <a class="code hl_function" href="classunitec_1_1rpg_1_1ui_1_1labels_1_1_bar_label_u_i.html#ae4e412e3849ec2cf8b6e245b6948656c">getPreferredSize</a>(JComponent c) {</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>        <span class="keywordflow">return</span> <a class="code hl_interface" href="interfaceunitec_1_1rpg_1_1ui_1_1dimensions_1_1_elements_dimension.html">ElementsDimension</a>.<a class="code hl_variable" href="interfaceunitec_1_1rpg_1_1ui_1_1dimensions_1_1_elements_dimension.html#a438a31d808ba75fa9e57462aaed7f7d0">BAR_LABEL</a>;</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>    }</div>
 </div>
-<div class="ttc" id="aclassunitec_1_1rpg_1_1ui_1_1labels_1_1_bar_label_u_i_html"><div class="ttname"><a href="classunitec_1_1rpg_1_1ui_1_1labels_1_1_bar_label_u_i.html">unitec.rpg.ui.labels.BarLabelUI</a></div><div class="ttdef"><b>Definition</b> <a href="#l00009">BarLabelUI.java:9</a></div></div>
-<div class="ttc" id="aclassunitec_1_1rpg_1_1ui_1_1labels_1_1_bar_label_u_i_html_a3b46d8e8f79dbd5e755e1003787be279"><div class="ttname"><a href="classunitec_1_1rpg_1_1ui_1_1labels_1_1_bar_label_u_i.html#a3b46d8e8f79dbd5e755e1003787be279">unitec.rpg.ui.labels.BarLabelUI.installDefaults</a></div><div class="ttdeci">void installDefaults(JLabel c)</div><div class="ttdef"><b>Definition</b> <a href="#l00012">BarLabelUI.java:12</a></div></div>
-<div class="ttc" id="aclassunitec_1_1rpg_1_1ui_1_1labels_1_1_bar_label_u_i_html_a4ee9b48597336b8dc6f9bb2244d409d3"><div class="ttname"><a href="classunitec_1_1rpg_1_1ui_1_1labels_1_1_bar_label_u_i.html#a4ee9b48597336b8dc6f9bb2244d409d3">unitec.rpg.ui.labels.BarLabelUI.paintEnabledText</a></div><div class="ttdeci">void paintEnabledText(JLabel l, Graphics g, String s, int textX, int textY)</div><div class="ttdef"><b>Definition</b> <a href="#l00037">BarLabelUI.java:37</a></div></div>
-<div class="ttc" id="aclassunitec_1_1rpg_1_1ui_1_1labels_1_1_bar_label_u_i_html_a9b3fdd7d909907ebeb78685eca7188fc"><div class="ttname"><a href="classunitec_1_1rpg_1_1ui_1_1labels_1_1_bar_label_u_i.html#a9b3fdd7d909907ebeb78685eca7188fc">unitec.rpg.ui.labels.BarLabelUI.paint</a></div><div class="ttdeci">void paint(Graphics g, JComponent c)</div><div class="ttdef"><b>Definition</b> <a href="#l00022">BarLabelUI.java:22</a></div></div>
-<div class="ttc" id="aclassunitec_1_1rpg_1_1ui_1_1labels_1_1_bar_label_u_i_html_ae4e412e3849ec2cf8b6e245b6948656c"><div class="ttname"><a href="classunitec_1_1rpg_1_1ui_1_1labels_1_1_bar_label_u_i.html#ae4e412e3849ec2cf8b6e245b6948656c">unitec.rpg.ui.labels.BarLabelUI.getPreferredSize</a></div><div class="ttdeci">Dimension getPreferredSize(JComponent c)</div><div class="ttdef"><b>Definition</b> <a href="#l00047">BarLabelUI.java:47</a></div></div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>}</div>
+</div>
+<div class="ttc" id="aclassunitec_1_1rpg_1_1ui_1_1cache_1_1_font_cache_html"><div class="ttname"><a href="classunitec_1_1rpg_1_1ui_1_1cache_1_1_font_cache.html">unitec.rpg.ui.cache.FontCache</a></div><div class="ttdef"><b>Definition</b> <a href="_font_cache_8java_source.html#l00010">FontCache.java:10</a></div></div>
+<div class="ttc" id="aclassunitec_1_1rpg_1_1ui_1_1cache_1_1_font_cache_html_a62babed054e59385f1520ac11ff019b2"><div class="ttname"><a href="classunitec_1_1rpg_1_1ui_1_1cache_1_1_font_cache.html#a62babed054e59385f1520ac11ff019b2">unitec.rpg.ui.cache.FontCache.addFont</a></div><div class="ttdeci">static Font addFont(String fontName, String fontPath)</div><div class="ttdef"><b>Definition</b> <a href="_font_cache_8java_source.html#l00023">FontCache.java:23</a></div></div>
+<div class="ttc" id="aclassunitec_1_1rpg_1_1ui_1_1labels_1_1_bar_label_html"><div class="ttname"><a href="classunitec_1_1rpg_1_1ui_1_1labels_1_1_bar_label.html">unitec.rpg.ui.labels.BarLabel</a></div><div class="ttdef"><b>Definition</b> <a href="_bar_label_8java_source.html#l00007">BarLabel.java:7</a></div></div>
+<div class="ttc" id="aclassunitec_1_1rpg_1_1ui_1_1labels_1_1_bar_label_u_i_html"><div class="ttname"><a href="classunitec_1_1rpg_1_1ui_1_1labels_1_1_bar_label_u_i.html">unitec.rpg.ui.labels.BarLabelUI</a></div><div class="ttdef"><b>Definition</b> <a href="#l00011">BarLabelUI.java:11</a></div></div>
+<div class="ttc" id="aclassunitec_1_1rpg_1_1ui_1_1labels_1_1_bar_label_u_i_html_a3b46d8e8f79dbd5e755e1003787be279"><div class="ttname"><a href="classunitec_1_1rpg_1_1ui_1_1labels_1_1_bar_label_u_i.html#a3b46d8e8f79dbd5e755e1003787be279">unitec.rpg.ui.labels.BarLabelUI.installDefaults</a></div><div class="ttdeci">void installDefaults(JLabel c)</div><div class="ttdef"><b>Definition</b> <a href="#l00043">BarLabelUI.java:43</a></div></div>
+<div class="ttc" id="aclassunitec_1_1rpg_1_1ui_1_1labels_1_1_bar_label_u_i_html_a4ee9b48597336b8dc6f9bb2244d409d3"><div class="ttname"><a href="classunitec_1_1rpg_1_1ui_1_1labels_1_1_bar_label_u_i.html#a4ee9b48597336b8dc6f9bb2244d409d3">unitec.rpg.ui.labels.BarLabelUI.paintEnabledText</a></div><div class="ttdeci">void paintEnabledText(JLabel l, Graphics g, String s, int textX, int textY)</div><div class="ttdef"><b>Definition</b> <a href="#l00067">BarLabelUI.java:67</a></div></div>
+<div class="ttc" id="aclassunitec_1_1rpg_1_1ui_1_1labels_1_1_bar_label_u_i_html_a5871e085bd6c0840b1c7285ea8d0c7cc"><div class="ttname"><a href="classunitec_1_1rpg_1_1ui_1_1labels_1_1_bar_label_u_i.html#a5871e085bd6c0840b1c7285ea8d0c7cc">unitec.rpg.ui.labels.BarLabelUI.BarLabelUI</a></div><div class="ttdeci">BarLabelUI(BarType type)</div><div class="ttdef"><b>Definition</b> <a href="#l00015">BarLabelUI.java:15</a></div></div>
+<div class="ttc" id="aclassunitec_1_1rpg_1_1ui_1_1labels_1_1_bar_label_u_i_html_a9b3fdd7d909907ebeb78685eca7188fc"><div class="ttname"><a href="classunitec_1_1rpg_1_1ui_1_1labels_1_1_bar_label_u_i.html#a9b3fdd7d909907ebeb78685eca7188fc">unitec.rpg.ui.labels.BarLabelUI.paint</a></div><div class="ttdeci">void paint(Graphics g, JComponent c)</div><div class="ttdef"><b>Definition</b> <a href="#l00050">BarLabelUI.java:50</a></div></div>
+<div class="ttc" id="aclassunitec_1_1rpg_1_1ui_1_1labels_1_1_bar_label_u_i_html_ae4e412e3849ec2cf8b6e245b6948656c"><div class="ttname"><a href="classunitec_1_1rpg_1_1ui_1_1labels_1_1_bar_label_u_i.html#ae4e412e3849ec2cf8b6e245b6948656c">unitec.rpg.ui.labels.BarLabelUI.getPreferredSize</a></div><div class="ttdeci">Dimension getPreferredSize(JComponent c)</div><div class="ttdef"><b>Definition</b> <a href="#l00077">BarLabelUI.java:77</a></div></div>
+<div class="ttc" id="aenumunitec_1_1rpg_1_1ui_1_1labels_1_1_bar_type_html"><div class="ttname"><a href="enumunitec_1_1rpg_1_1ui_1_1labels_1_1_bar_type.html">unitec.rpg.ui.labels.BarType</a></div><div class="ttdef"><b>Definition</b> <a href="_bar_type_8java_source.html#l00007">BarType.java:7</a></div></div>
+<div class="ttc" id="aenumunitec_1_1rpg_1_1ui_1_1labels_1_1_bar_type_html_a05151d8e086ac7dbc4f9aabd5e528b16"><div class="ttname"><a href="enumunitec_1_1rpg_1_1ui_1_1labels_1_1_bar_type.html#a05151d8e086ac7dbc4f9aabd5e528b16">unitec.rpg.ui.labels.BarType.getIcon</a></div><div class="ttdeci">ImageIcon getIcon()</div><div class="ttdef"><b>Definition</b> <a href="_bar_type_8java_source.html#l00048">BarType.java:48</a></div></div>
+<div class="ttc" id="aenumunitec_1_1rpg_1_1ui_1_1labels_1_1_bar_type_html_a3f997a3600ad34a118b164c163792389"><div class="ttname"><a href="enumunitec_1_1rpg_1_1ui_1_1labels_1_1_bar_type.html#a3f997a3600ad34a118b164c163792389">unitec.rpg.ui.labels.BarType.getBar</a></div><div class="ttdeci">ImageIcon getBar()</div><div class="ttdef"><b>Definition</b> <a href="_bar_type_8java_source.html#l00052">BarType.java:52</a></div></div>
+<div class="ttc" id="aenumunitec_1_1rpg_1_1ui_1_1labels_1_1_bar_type_html_a4a9c86b28be9f898b79d1109f9d8d799"><div class="ttname"><a href="enumunitec_1_1rpg_1_1ui_1_1labels_1_1_bar_type.html#a4a9c86b28be9f898b79d1109f9d8d799">unitec.rpg.ui.labels.BarType.getContainer</a></div><div class="ttdeci">ImageIcon getContainer()</div><div class="ttdef"><b>Definition</b> <a href="_bar_type_8java_source.html#l00044">BarType.java:44</a></div></div>
 <div class="ttc" id="ainterfaceunitec_1_1rpg_1_1ui_1_1dimensions_1_1_elements_dimension_html"><div class="ttname"><a href="interfaceunitec_1_1rpg_1_1ui_1_1dimensions_1_1_elements_dimension.html">unitec.rpg.ui.dimensions.ElementsDimension</a></div><div class="ttdef"><b>Definition</b> <a href="_elements_dimension_8java_source.html#l00006">ElementsDimension.java:6</a></div></div>
 <div class="ttc" id="ainterfaceunitec_1_1rpg_1_1ui_1_1dimensions_1_1_elements_dimension_html_a438a31d808ba75fa9e57462aaed7f7d0"><div class="ttname"><a href="interfaceunitec_1_1rpg_1_1ui_1_1dimensions_1_1_elements_dimension.html#a438a31d808ba75fa9e57462aaed7f7d0">unitec.rpg.ui.dimensions.ElementsDimension.BAR_LABEL</a></div><div class="ttdeci">Dimension BAR_LABEL</div><div class="ttdef"><b>Definition</b> <a href="_elements_dimension_8java_source.html#l00017">ElementsDimension.java:17</a></div></div>
 </div><!-- fragment --></div><!-- contents -->

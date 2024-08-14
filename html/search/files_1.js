@@ -7,5 +7,6 @@ var searchData=
   ['basiccharacter_2ejava_4',['BasicCharacter.java',['../_basic_character_8java.html',1,'']]],
   ['basiciconbutton_2ejava_5',['BasicIconButton.java',['../_basic_icon_button_8java.html',1,'']]],
   ['blacksmithbutton_2ejava_6',['BlackSmithButton.java',['../_black_smith_button_8java.html',1,'']]],
-  ['buttonui_2ejava_7',['ButtonUI.java',['../_button_u_i_8java.html',1,'']]]
+  ['bossenemy_2ejava_7',['BossEnemy.java',['../_boss_enemy_8java.html',1,'']]],
+  ['buttonui_2ejava_8',['ButtonUI.java',['../_button_u_i_8java.html',1,'']]]
 ];

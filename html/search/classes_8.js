@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['main_0',['Main',['../classunitec_1_1rpg_1_1_main.html',1,'unitec::rpg']]],
-  ['mainwindow_1',['MainWindow',['../classunitec_1_1rpg_1_1ui_1_1windows_1_1_main_window.html',1,'unitec::rpg::ui::windows']]]
+  ['kingslime_0',['KingSlime',['../classunitec_1_1rpg_1_1entities_1_1enemies_1_1slimes_1_1_king_slime.html',1,'unitec::rpg::entities::enemies::slimes']]]
 ];

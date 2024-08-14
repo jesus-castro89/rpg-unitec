@@ -7,5 +7,5 @@ var searchData=
   ['description_4',['description',['../classunitec_1_1rpg_1_1items_1_1_item.html#abf6f746cdffa02bc1c6c844b854e5fb4',1,'unitec::rpg::items::Item']]],
   ['desktopui_5',['DesktopUI',['../classunitec_1_1rpg_1_1ui_1_1panels_1_1_desktop_u_i.html',1,'unitec::rpg::ui::panels']]],
   ['desktopui_2ejava_6',['DesktopUI.java',['../_desktop_u_i_8java.html',1,'']]],
-  ['droploot_7',['dropLoot',['../classunitec_1_1rpg_1_1entities_1_1_enemy.html#a91760b3a1ba6989902dc3b8ed9488746',1,'unitec::rpg::entities::Enemy']]]
+  ['droploot_7',['dropLoot',['../classunitec_1_1rpg_1_1entities_1_1enemies_1_1_enemy.html#aab4e8e9c6dc3ea759cb653aef51e493b',1,'unitec::rpg::entities::enemies::Enemy']]]
 ];

@@ -9,6 +9,7 @@ var interfaceunitec_1_1rpg_1_1ui_1_1dimensions_1_1_elements_dimension =
     [ "MARGIN_BORDER", "interfaceunitec_1_1rpg_1_1ui_1_1dimensions_1_1_elements_dimension.html#a248b8b9f8ef9e834f43f74527fbd5cb5", null ],
     [ "NPC_LABEL", "interfaceunitec_1_1rpg_1_1ui_1_1dimensions_1_1_elements_dimension.html#af11f7a568f23855858d7e56cb2add057", null ],
     [ "PLAYER_LABEL", "interfaceunitec_1_1rpg_1_1ui_1_1dimensions_1_1_elements_dimension.html#a3d7882a1c7e22c8981fcf730268ec2e6", null ],
+    [ "START_PANEL_SIZE", "interfaceunitec_1_1rpg_1_1ui_1_1dimensions_1_1_elements_dimension.html#a019a23527d98021dbf7dac9b4aec69cb", null ],
     [ "TOP_PANEL_SIZE", "interfaceunitec_1_1rpg_1_1ui_1_1dimensions_1_1_elements_dimension.html#ae4cafca145d9011d4c1ba1c99d8bb37f", null ],
     [ "WINDOW_SIZE", "interfaceunitec_1_1rpg_1_1ui_1_1dimensions_1_1_elements_dimension.html#a7de7e2d1c49470277ef4a101c9177aa3", null ]
 ];

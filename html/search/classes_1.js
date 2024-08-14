@@ -7,5 +7,6 @@ var searchData=
   ['basiccharacter_4',['BasicCharacter',['../classunitec_1_1rpg_1_1entities_1_1_basic_character.html',1,'unitec::rpg::entities']]],
   ['basiciconbutton_5',['BasicIconButton',['../classunitec_1_1rpg_1_1ui_1_1buttons_1_1_basic_icon_button.html',1,'unitec::rpg::ui::buttons']]],
   ['blacksmithbutton_6',['BlackSmithButton',['../classunitec_1_1rpg_1_1ui_1_1buttons_1_1_black_smith_button.html',1,'unitec::rpg::ui::buttons']]],
-  ['buttonui_7',['ButtonUI',['../classunitec_1_1rpg_1_1ui_1_1_button_u_i.html',1,'unitec::rpg::ui']]]
+  ['bossenemy_7',['BossEnemy',['../interfaceunitec_1_1rpg_1_1entities_1_1enemies_1_1annotations_1_1_boss_enemy.html',1,'unitec::rpg::entities::enemies::annotations']]],
+  ['buttonui_8',['ButtonUI',['../classunitec_1_1rpg_1_1ui_1_1_button_u_i.html',1,'unitec::rpg::ui']]]
 ];

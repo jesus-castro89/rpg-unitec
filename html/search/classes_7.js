@@ -5,8 +5,10 @@ var searchData=
   ['imageloader_2',['ImageLoader',['../classunitec_1_1rpg_1_1ui_1_1cache_1_1_image_loader.html',1,'unitec::rpg::ui::cache']]],
   ['imagepanel_3',['ImagePanel',['../classunitec_1_1rpg_1_1ui_1_1panels_1_1_image_panel.html',1,'unitec::rpg::ui::panels']]],
   ['internalframeui_4',['InternalFrameUI',['../classunitec_1_1rpg_1_1ui_1_1panels_1_1_internal_frame_u_i.html',1,'unitec::rpg::ui::panels']]],
-  ['inventorybutton_5',['InventoryButton',['../classunitec_1_1rpg_1_1ui_1_1buttons_1_1_inventory_button.html',1,'unitec::rpg::ui::buttons']]],
-  ['inventorypanel_6',['InventoryPanel',['../classunitec_1_1rpg_1_1ui_1_1panels_1_1_inventory_panel.html',1,'unitec::rpg::ui::panels']]],
-  ['item_7',['Item',['../classunitec_1_1rpg_1_1items_1_1_item.html',1,'unitec::rpg::items']]],
-  ['itemtype_8',['ItemType',['../enumunitec_1_1rpg_1_1items_1_1_item_type.html',1,'unitec::rpg::items']]]
+  ['inventory_5',['Inventory',['../classunitec_1_1rpg_1_1items_1_1_inventory.html',1,'unitec.rpg.items.Inventory'],['../classunitec_1_1rpg_1_1ui_1_1windows_1_1_inventory.html',1,'unitec.rpg.ui.windows.Inventory']]],
+  ['inventorybutton_6',['InventoryButton',['../classunitec_1_1rpg_1_1ui_1_1buttons_1_1_inventory_button.html',1,'unitec::rpg::ui::buttons']]],
+  ['inventorypanel_7',['InventoryPanel',['../classunitec_1_1rpg_1_1ui_1_1panels_1_1_inventory_panel.html',1,'unitec::rpg::ui::panels']]],
+  ['item_8',['Item',['../classunitec_1_1rpg_1_1items_1_1_item.html',1,'unitec::rpg::items']]],
+  ['itemdisplay_9',['ItemDisplay',['../classunitec_1_1rpg_1_1ui_1_1windows_1_1_item_display.html',1,'unitec::rpg::ui::windows']]],
+  ['itemtype_10',['ItemType',['../enumunitec_1_1rpg_1_1items_1_1_item_type.html',1,'unitec::rpg::items']]]
 ];

@@ -29,6 +29,7 @@
   <td id="projectalign">
    <div id="projectname">My Project
    </div>
+   <div id="projectbrief">Miembro 1, Miembro 2, Miembro 3</div>
   </td>
  </tr>
  </tbody>
@@ -101,32 +102,57 @@ $(function(){initNavTree('_attack_button_8java_source.html',''); initResizable(t
 <div class="contents">
 <a href="_attack_button_8java.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="keyword">package </span>unitec.rpg.ui.buttons;</div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> </div>
-<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="keyword">import</span> javax.swing.*;</div>
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="keyword">import</span> java.awt.*;</div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span> </div>
-<div class="foldopen" id="foldopen00006" data-start="{" data-end="};">
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno"><a class="line" href="classunitec_1_1rpg_1_1ui_1_1buttons_1_1_attack_button.html">    6</a></span><span class="keyword">public</span> <span class="keyword">class </span><a class="code hl_class" href="classunitec_1_1rpg_1_1ui_1_1buttons_1_1_attack_button.html">AttackButton</a> <span class="keyword">extends</span> <a class="code hl_class" href="classunitec_1_1rpg_1_1ui_1_1buttons_1_1_abstract_button.html">AbstractButton</a> {</div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="keyword">import</span> unitec.rpg.entities.Player;</div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="keyword">import</span> unitec.rpg.entities.enemies.Enemy;</div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="keyword">import</span> unitec.rpg.ui.buttons.events.AttackButtonListener;</div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="keyword">import</span> unitec.rpg.ui.windows.MainWindow;</div>
 <div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span> </div>
-<div class="foldopen" id="foldopen00008" data-start="{" data-end="}">
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno"><a class="line" href="classunitec_1_1rpg_1_1ui_1_1buttons_1_1_attack_button.html#a5f5933704175cc0af4cbac54d5bc8fe5">    8</a></span>    <span class="keyword">public</span> <a class="code hl_function" href="classunitec_1_1rpg_1_1ui_1_1buttons_1_1_attack_button.html#a5f5933704175cc0af4cbac54d5bc8fe5">AttackButton</a>() {</div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span> </div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>        super(<span class="stringliteral">&quot;Atacar&quot;</span>, <span class="keyword">false</span>);</div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>        setForeground(Color.WHITE);</div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>    }</div>
-</div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span> </div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>    @Override</div>
-<div class="foldopen" id="foldopen00015" data-start="{" data-end="}">
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno"><a class="line" href="classunitec_1_1rpg_1_1ui_1_1buttons_1_1_attack_button.html#af0cdfd6b6424dea09e47d51aa04d8f28">   15</a></span>    <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classunitec_1_1rpg_1_1ui_1_1buttons_1_1_attack_button.html#af0cdfd6b6424dea09e47d51aa04d8f28">addAction</a>() {</div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="keyword">import</span> javax.swing.*;</div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="keyword">import</span> java.awt.*;</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span> </div>
+<div class="foldopen" id="foldopen00011" data-start="{" data-end="};">
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno"><a class="line" href="classunitec_1_1rpg_1_1ui_1_1buttons_1_1_attack_button.html">   11</a></span><span class="keyword">public</span> <span class="keyword">class </span><a class="code hl_class" href="classunitec_1_1rpg_1_1ui_1_1buttons_1_1_attack_button.html">AttackButton</a> <span class="keyword">extends</span> <a class="code hl_class" href="classunitec_1_1rpg_1_1ui_1_1buttons_1_1_abstract_button.html">AbstractButton</a> {</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>    <span class="keyword">private</span> <a class="code hl_class" href="classunitec_1_1rpg_1_1entities_1_1enemies_1_1_enemy.html">Enemy</a> enemy;</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>    <span class="keyword">private</span> <a class="code hl_class" href="classunitec_1_1rpg_1_1entities_1_1_player.html">Player</a> player;</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>    <span class="keyword">private</span> <a class="code hl_class" href="classunitec_1_1rpg_1_1ui_1_1windows_1_1_main_window.html">MainWindow</a> mainWindow;</div>
 <div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> </div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    }</div>
+<div class="foldopen" id="foldopen00017" data-start="{" data-end="}">
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno"><a class="line" href="classunitec_1_1rpg_1_1ui_1_1buttons_1_1_attack_button.html#a71007527d17c9ee3babb92e02b75af75">   17</a></span>    <span class="keyword">public</span> <a class="code hl_function" href="classunitec_1_1rpg_1_1ui_1_1buttons_1_1_attack_button.html#a71007527d17c9ee3babb92e02b75af75">AttackButton</a>(<a class="code hl_class" href="classunitec_1_1rpg_1_1ui_1_1windows_1_1_main_window.html">MainWindow</a> mainWindow, <a class="code hl_class" href="classunitec_1_1rpg_1_1entities_1_1enemies_1_1_enemy.html">Enemy</a> enemy, <a class="code hl_class" href="classunitec_1_1rpg_1_1entities_1_1_player.html">Player</a> player) {</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>        super(<span class="stringliteral">&quot;Atacar&quot;</span>, <span class="keyword">false</span>);</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>        this.mainWindow = mainWindow;</div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>        this.enemy = enemy;</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>        this.player = player;</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>        setForeground(Color.WHITE);</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>        <a class="code hl_function" href="classunitec_1_1rpg_1_1ui_1_1buttons_1_1_attack_button.html#af0cdfd6b6424dea09e47d51aa04d8f28">addAction</a>();</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    }</div>
 </div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>}</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span> </div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    @Override</div>
+<div class="foldopen" id="foldopen00028" data-start="{" data-end="}">
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno"><a class="line" href="classunitec_1_1rpg_1_1ui_1_1buttons_1_1_attack_button.html#af0cdfd6b6424dea09e47d51aa04d8f28">   28</a></span>    <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classunitec_1_1rpg_1_1ui_1_1buttons_1_1_attack_button.html#af0cdfd6b6424dea09e47d51aa04d8f28">addAction</a>() {</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span> </div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>        addActionListener(<span class="keyword">new</span> <a class="code hl_class" href="classunitec_1_1rpg_1_1ui_1_1buttons_1_1events_1_1_attack_button_listener.html">AttackButtonListener</a>(mainWindow, enemy, player));</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    }</div>
 </div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span> </div>
+<div class="foldopen" id="foldopen00033" data-start="{" data-end="}">
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno"><a class="line" href="classunitec_1_1rpg_1_1ui_1_1buttons_1_1_attack_button.html#aa3df2edde617864794b47b7b8a4dc9e2">   33</a></span>    <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classunitec_1_1rpg_1_1ui_1_1buttons_1_1_attack_button.html#aa3df2edde617864794b47b7b8a4dc9e2">setEnemy</a>(<a class="code hl_class" href="classunitec_1_1rpg_1_1entities_1_1enemies_1_1_enemy.html">Enemy</a> enemy) {</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>        this.enemy = enemy;</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    }</div>
+</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>}</div>
+</div>
+<div class="ttc" id="aclassunitec_1_1rpg_1_1entities_1_1_player_html"><div class="ttname"><a href="classunitec_1_1rpg_1_1entities_1_1_player.html">unitec.rpg.entities.Player</a></div><div class="ttdef"><b>Definition</b> <a href="_player_8java_source.html#l00008">Player.java:8</a></div></div>
+<div class="ttc" id="aclassunitec_1_1rpg_1_1entities_1_1enemies_1_1_enemy_html"><div class="ttname"><a href="classunitec_1_1rpg_1_1entities_1_1enemies_1_1_enemy.html">unitec.rpg.entities.enemies.Enemy</a></div><div class="ttdef"><b>Definition</b> <a href="_enemy_8java_source.html#l00009">Enemy.java:10</a></div></div>
 <div class="ttc" id="aclassunitec_1_1rpg_1_1ui_1_1buttons_1_1_abstract_button_html"><div class="ttname"><a href="classunitec_1_1rpg_1_1ui_1_1buttons_1_1_abstract_button.html">unitec.rpg.ui.buttons.AbstractButton</a></div><div class="ttdef"><b>Definition</b> <a href="_abstract_button_8java_source.html#l00008">AbstractButton.java:8</a></div></div>
-<div class="ttc" id="aclassunitec_1_1rpg_1_1ui_1_1buttons_1_1_attack_button_html"><div class="ttname"><a href="classunitec_1_1rpg_1_1ui_1_1buttons_1_1_attack_button.html">unitec.rpg.ui.buttons.AttackButton</a></div><div class="ttdef"><b>Definition</b> <a href="#l00006">AttackButton.java:6</a></div></div>
-<div class="ttc" id="aclassunitec_1_1rpg_1_1ui_1_1buttons_1_1_attack_button_html_a5f5933704175cc0af4cbac54d5bc8fe5"><div class="ttname"><a href="classunitec_1_1rpg_1_1ui_1_1buttons_1_1_attack_button.html#a5f5933704175cc0af4cbac54d5bc8fe5">unitec.rpg.ui.buttons.AttackButton.AttackButton</a></div><div class="ttdeci">AttackButton()</div><div class="ttdef"><b>Definition</b> <a href="#l00008">AttackButton.java:8</a></div></div>
-<div class="ttc" id="aclassunitec_1_1rpg_1_1ui_1_1buttons_1_1_attack_button_html_af0cdfd6b6424dea09e47d51aa04d8f28"><div class="ttname"><a href="classunitec_1_1rpg_1_1ui_1_1buttons_1_1_attack_button.html#af0cdfd6b6424dea09e47d51aa04d8f28">unitec.rpg.ui.buttons.AttackButton.addAction</a></div><div class="ttdeci">void addAction()</div><div class="ttdef"><b>Definition</b> <a href="#l00015">AttackButton.java:15</a></div></div>
+<div class="ttc" id="aclassunitec_1_1rpg_1_1ui_1_1buttons_1_1_attack_button_html"><div class="ttname"><a href="classunitec_1_1rpg_1_1ui_1_1buttons_1_1_attack_button.html">unitec.rpg.ui.buttons.AttackButton</a></div><div class="ttdef"><b>Definition</b> <a href="#l00011">AttackButton.java:11</a></div></div>
+<div class="ttc" id="aclassunitec_1_1rpg_1_1ui_1_1buttons_1_1_attack_button_html_a71007527d17c9ee3babb92e02b75af75"><div class="ttname"><a href="classunitec_1_1rpg_1_1ui_1_1buttons_1_1_attack_button.html#a71007527d17c9ee3babb92e02b75af75">unitec.rpg.ui.buttons.AttackButton.AttackButton</a></div><div class="ttdeci">AttackButton(MainWindow mainWindow, Enemy enemy, Player player)</div><div class="ttdef"><b>Definition</b> <a href="#l00017">AttackButton.java:17</a></div></div>
+<div class="ttc" id="aclassunitec_1_1rpg_1_1ui_1_1buttons_1_1_attack_button_html_aa3df2edde617864794b47b7b8a4dc9e2"><div class="ttname"><a href="classunitec_1_1rpg_1_1ui_1_1buttons_1_1_attack_button.html#aa3df2edde617864794b47b7b8a4dc9e2">unitec.rpg.ui.buttons.AttackButton.setEnemy</a></div><div class="ttdeci">void setEnemy(Enemy enemy)</div><div class="ttdef"><b>Definition</b> <a href="#l00033">AttackButton.java:33</a></div></div>
+<div class="ttc" id="aclassunitec_1_1rpg_1_1ui_1_1buttons_1_1_attack_button_html_af0cdfd6b6424dea09e47d51aa04d8f28"><div class="ttname"><a href="classunitec_1_1rpg_1_1ui_1_1buttons_1_1_attack_button.html#af0cdfd6b6424dea09e47d51aa04d8f28">unitec.rpg.ui.buttons.AttackButton.addAction</a></div><div class="ttdeci">void addAction()</div><div class="ttdef"><b>Definition</b> <a href="#l00028">AttackButton.java:28</a></div></div>
+<div class="ttc" id="aclassunitec_1_1rpg_1_1ui_1_1buttons_1_1events_1_1_attack_button_listener_html"><div class="ttname"><a href="classunitec_1_1rpg_1_1ui_1_1buttons_1_1events_1_1_attack_button_listener.html">unitec.rpg.ui.buttons.events.AttackButtonListener</a></div><div class="ttdef"><b>Definition</b> <a href="_attack_button_listener_8java_source.html#l00018">AttackButtonListener.java:18</a></div></div>
+<div class="ttc" id="aclassunitec_1_1rpg_1_1ui_1_1windows_1_1_main_window_html"><div class="ttname"><a href="classunitec_1_1rpg_1_1ui_1_1windows_1_1_main_window.html">unitec.rpg.ui.windows.MainWindow</a></div><div class="ttdef"><b>Definition</b> <a href="_main_window_8java_source.html#l00020">MainWindow.java:20</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

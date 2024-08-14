@@ -29,6 +29,7 @@
   <td id="projectalign">
    <div id="projectname">My Project
    </div>
+   <div id="projectbrief">Miembro 1, Miembro 2, Miembro 3</div>
   </td>
  </tr>
  </tbody>
@@ -98,6 +99,7 @@ $(function(){initNavTree('classunitec_1_1rpg_1_1ui_1_1labels_1_1_image_label.htm
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pro-methods">Protected Member Functions</a> &#124;
 <a href="classunitec_1_1rpg_1_1ui_1_1labels_1_1_image_label-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">unitec.rpg.ui.labels.ImageLabel Class Reference</div></div>
 </div><!--header-->
@@ -108,7 +110,7 @@ Inheritance diagram for unitec.rpg.ui.labels.ImageLabel:</div>
  <div class="center">
   <img src="classunitec_1_1rpg_1_1ui_1_1labels_1_1_image_label.png" usemap="#unitec.rpg.ui.labels.ImageLabel_map" alt=""/>
   <map id="unitec.rpg.ui.labels.ImageLabel_map" name="unitec.rpg.ui.labels.ImageLabel_map">
-<area href="classunitec_1_1rpg_1_1ui_1_1labels_1_1_bar_label.html" alt="unitec.rpg.ui.labels.BarLabel" shape="rect" coords="0,112,192,136"/>
+<area href="classunitec_1_1rpg_1_1ui_1_1labels_1_1_file_label.html" alt="unitec.rpg.ui.labels.FileLabel" shape="rect" coords="0,112,192,136"/>
 <area href="classunitec_1_1rpg_1_1ui_1_1labels_1_1_gold_label.html" alt="unitec.rpg.ui.labels.GoldLabel" shape="rect" coords="202,112,394,136"/>
 <area href="classunitec_1_1rpg_1_1ui_1_1labels_1_1_npc_label.html" alt="unitec.rpg.ui.labels.NpcLabel" shape="rect" coords="404,112,596,136"/>
 <area href="classunitec_1_1rpg_1_1ui_1_1labels_1_1_player_label.html" alt="unitec.rpg.ui.labels.PlayerLabel" shape="rect" coords="606,112,798,136"/>
@@ -119,10 +121,17 @@ Inheritance diagram for unitec.rpg.ui.labels.ImageLabel:</div>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:aa478fb02e24091e523f3ac3345785887" id="r_aa478fb02e24091e523f3ac3345785887"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa478fb02e24091e523f3ac3345785887">ImageLabel</a> (ImageIcon icon)</td></tr>
 <tr class="separator:aa478fb02e24091e523f3ac3345785887"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a401079949058a32886b94bb3beae7303" id="r_a401079949058a32886b94bb3beae7303"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a401079949058a32886b94bb3beae7303">setIcon</a> (ImageIcon icon)</td></tr>
+<tr class="separator:a401079949058a32886b94bb3beae7303"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pro-methods" name="pro-methods"></a>
+Protected Member Functions</h2></td></tr>
+<tr class="memitem:a7268e4f4f490cac752258f2a78a151c4" id="r_a7268e4f4f490cac752258f2a78a151c4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7268e4f4f490cac752258f2a78a151c4">paintComponent</a> (Graphics g)</td></tr>
+<tr class="separator:a7268e4f4f490cac752258f2a78a151c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock">
-<p class="definition">Definition at line <a class="el" href="_image_label_8java_source.html#l00005">5</a> of file <a class="el" href="_image_label_8java_source.html">ImageLabel.java</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_image_label_8java_source.html#l00006">6</a> of file <a class="el" href="_image_label_8java_source.html">ImageLabel.java</a>.</p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="aa478fb02e24091e523f3ac3345785887" name="aa478fb02e24091e523f3ac3345785887"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aa478fb02e24091e523f3ac3345785887">&#9670;&#160;</a></span>ImageLabel()</h2>
@@ -139,7 +148,56 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="_image_label_8java_source.html#l00007">7</a> of file <a class="el" href="_image_label_8java_source.html">ImageLabel.java</a>.</p>
+<p class="definition">Definition at line <a class="el" href="_image_label_8java_source.html#l00008">8</a> of file <a class="el" href="_image_label_8java_source.html">ImageLabel.java</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="a7268e4f4f490cac752258f2a78a151c4" name="a7268e4f4f490cac752258f2a78a151c4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7268e4f4f490cac752258f2a78a151c4">&#9670;&#160;</a></span>paintComponent()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void unitec.rpg.ui.labels.ImageLabel.paintComponent </td>
+          <td>(</td>
+          <td class="paramtype">Graphics</td>          <td class="paramname"><span class="paramname"><em>g</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">protected</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Reimplemented in <a class="el" href="classunitec_1_1rpg_1_1ui_1_1labels_1_1_gold_label.html#ad907c3f8e6428b3389e652652f92fa34">unitec.rpg.ui.labels.GoldLabel</a>, and <a class="el" href="classunitec_1_1rpg_1_1ui_1_1labels_1_1_npc_label.html#aeeaa78f00ad81a61700642838774d334">unitec.rpg.ui.labels.NpcLabel</a>.</p>
+
+<p class="definition">Definition at line <a class="el" href="_image_label_8java_source.html#l00013">13</a> of file <a class="el" href="_image_label_8java_source.html">ImageLabel.java</a>.</p>
+
+</div>
+</div>
+<a id="a401079949058a32886b94bb3beae7303" name="a401079949058a32886b94bb3beae7303"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a401079949058a32886b94bb3beae7303">&#9670;&#160;</a></span>setIcon()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void unitec.rpg.ui.labels.ImageLabel.setIcon </td>
+          <td>(</td>
+          <td class="paramtype">ImageIcon</td>          <td class="paramname"><span class="paramname"><em>icon</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="_image_label_8java_source.html#l00023">23</a> of file <a class="el" href="_image_label_8java_source.html">ImageLabel.java</a>.</p>
 
 </div>
 </div>
